@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>वास्तु परामर्श | घर और ऑफिस के लिए वास्तु समाधान</title>
+<link href="https://fonts.googleapis.com/css2?family=Tiro+Devanagari+Hindi:wght@400;700&family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --green: #2E8B57;
+  --maroon: #8B0000;
+  --saffron: #FF9933;
+  --gold: #FFD700;
+}
+
+*{margin:0;padding:0;box-sizing:border-box;}
+
+body{
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(135deg, #F0FFF0 0%, #E6FFE6 100%);
+  color: #333;
+}
+
+header{
+  background: linear-gradient(90deg, var(--green), var(--maroon));
+  padding: 25px 20px;
+  text-align: center;
+  box-shadow: 0 4px 20px rgba(46,139,87,0.3);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.logo-area{display:flex;align-items:center;justify-content:center;gap:60px;flex-wrap:wrap;}
+.logo-area img{width:110px;height:110px;border-radius:50%;border:4px solid var(--gold);object-fit:cover;}
+
+header h1{font-family:'Tiro Devanagari Hindi',serif;color:white;font-size:2.3rem;}
+.tagline{color:var(--gold);font-size:1rem;margin-top:5px;font-weight:600;}
+
+.home-section{background:white;padding:15px;text-align:center;box-shadow:0 2px 10px rgba(0,0,0,0.1);}
+.home-btn{display:inline-block;background:linear-gradient(90deg,var(--green),var(--maroon));color:white;padding:12px 30px;border-radius:50px;text-decoration:none;font-weight:700;border:2px solid var(--gold);}
+
+.container{max-width:1200px;margin:40px auto;padding:20px;}
+.section-title{text-align:center;font-family:'Tiro Devanagari Hindi',serif;font-size:2.2rem;color:var(--green);margin-bottom:10px;}
+.subtitle{text-align:center;color:#666;margin-bottom:40px;font-size:1.1rem;}
+
+/* BANNER */
+.banner{
+  background: linear-gradient(135deg,var(--green),var(--saffron));
+  color:white;padding:50px 30px;border-radius:20px;text-align:center;margin-bottom:50px;
+}
+.banner h2{font-family:'Tiro Devanagari Hindi',serif;font-size:1.8rem;margin-bottom:10px;}
+
+/* VASTU AREAS */
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:30px;margin-bottom:50px;}
+.card{
+  background:white;padding:30px;border-radius:20px;border-top:5px solid var(--green);
+  box-shadow:0 10px 25px rgba(0,0,0,0.1);transition:0.4s;
+}
+.card:hover{transform:translateY(-8px);border-top:5px solid var(--saffron);}
+.card-icon{font-size:3rem;margin-bottom:15px;}
+.card h3{font-family:'Tiro Devanagari Hindi',serif;color:var(--green);font-size:1.4rem;margin-bottom:10px;}
+.card p{color:#555;line-height:1.7;margin-bottom:15px;}
+.problem{color:var(--maroon);font-weight:600;font-size:0.9rem;}
+.solution{color:var(--green);font-weight:600;font-size:0.9rem;margin-top:8px;}
+
+/* DIRECTIONS */
+.direction-box{background:white;padding:30px;border-radius:20px;margin-bottom:50px;box-shadow:0 10px 30px rgba(0,0,0,0.1);}
+.direction-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:15px;margin-top:20px;}
+.direction{
+  background:linear-gradient(135deg,#FFF8E1,#FFEFD5);padding:20px;border-radius:15px;text-align:center;
+  border:2px solid var(--gold);font-weight:700;color:var(--green);
+}
+
+/* FORM */
+.form-section{background:white;padding:40px;border-radius:20px;box-shadow:0 10px 30px rgba(0,0,0,0.1);}
+.form-section h2{font-family:'Tiro Devanagari Hindi',serif;color:var(--green);text-align:center;margin-bottom:25px;}
+.form-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:20px;}
+.input-group{display:flex;flex-direction:column;}
+.input-group label{font-weight:600;margin-bottom:8px;color:var(--green);}
+.input-group input,.input-group select,.input-group textarea{
+  padding:12px;border:2px solid #ddd;border-radius:10px;font-size:1rem;font-family:'Poppins';
+}
+.btn-submit{
+  background:linear-gradient(90deg,var(--saffron),var(--green));color:white;padding:15px 40px;
+  border:none;border-radius:50px;font-size:1.1rem;font-weight:700;cursor:pointer;margin-top:25px;
+  width:100%;
+}
+
+.contact-bar{
+  background:linear-gradient(90deg,var(--maroon),var(--green));color:white;padding:25px;text-align:center;
+  border-radius:15px;margin-top:40px;
+}
+
+footer{background:var(--maroon);color:white;text-align:center;padding:25px;margin-top:50px;font-family:'Tiro Devanagari Hindi',serif;}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="logo-area">
+    <img src="PD_Sharma2.png" alt="Logo">
+    <div>
+      <h1>वास्तु परामर्श केंद्र</h1>
+      <p class="tagline">घर में सुख-शांति और समृद्धि के लिए</p>
+    </div>
+    <img src="PD_Sharma.png" alt="Pandit Ji">
+  </div>
+</header>
+
+<div class="home-section">
+  <a href="Index.html" class="home-btn">🏠 Home पर जाएं</a>
+</div>
+
+<div class="container">
+  
+  <h2 class="section-title">वास्तु दोष निवारण</h2>
+  <p class="subtitle">बिना तोड़-फोड़ के वैज्ञानिक वास्तु समाधान</p>
+
+  <div class="banner">
+    <h2>"घर का वास्तु सही, तो जीवन में खुशहाली"</h2>
+    <p>पंडित जी 20+ साल से घर, ऑफिस, फैक्ट्री और प्लॉट का वास्तु चेक करते हैं। नक्शे के अनुसार और बिना तोड़-फोड़ के उपाय बताए जाते हैं।</p>
+  </div>
+
+  <!-- VASTU SERVICES -->
+  <div class="grid">
+    
+    <div class="card">
+      <div class="card-icon">🏠</div>
+      <h3>आवासीय वास्तु</h3>
+      <p>घर के हर कमरे का वास्तु चेक। प्रवेश द्वार, रसोई, बेडरूम, पूजा घर की सही दिशा।</p>
+      <div class="problem">समस्या: पैसा नहीं टिकता, बीमारी, झगड़ा</div>
+      <div class="solution">समाधान: रंग, फर्नीचर और यंत्र से निवारण</div>
+    </div>
+
+    <div class="card">
+      <div class="card-icon">🏢</div>
+      <h3>व्यावसायिक वास्तु</h3>
+      <p>दुकान, ऑफिस, शोरूम का वास्तु। ग्राहक बढ़ाने और लाभ के लिए वास्तु टिप्स।</p>
+      <div class="problem">समस्या: ग्राहक नहीं आ रहे, घाटा</div>
+      <div class="solution">समाधान: कैश काउंटर और मालिक की सीट की दिशा</div>
+    </div>
+
+    <div class="card">
+      <div class="card-icon">🏭</div>
+      <h3>फैक्ट्री वास्तु</h3>
+      <p>उत्पादन बढ़ाने, मशीन की दिशा और कर्मचारियों की शांति के लिए वास्तु।</p>
+      <div class="problem">समस्या: हानि, दुर्घटना, लेबर समस्या</div>
+      <div class="solution">समाधान: मशीन और गेट की सही प्लेसमेंट</div>
+    </div>
+
+    <div class="card">
+      <div class="card-icon">📐</div>
+      <h3>प्लॉट और नक्शा वास्तु</h3>
+      <p>घर बनाने से पहले प्लॉट का वास्तु चेक। नक्शा पास करवाने से पहले सलाह।</p>
+      <div class="problem">समस्या: अनियमित प्लॉट, ढलान</div>
+      <div class="solution">समाधान: निर्माण से पहले सही दिशा तय</div>
+    </div>
+
+    <div class="card">
+      <div class="card-icon">🌿</div>
+      <h3>नाम और ब्रांड वास्तु</h3>
+      <p>दुकान, कंपनी के नाम का अंक ज्योतिष और वास्तु से मिलान।</p>
+      <div class="problem">समस्या: बिजनेस नहीं चल रहा</div>
+      <div class="solution">समाधान: नाम में सुधार के सुझाव</div>
+    </div>
+
+    <div class="card">
+      <div class="card-icon">🔮</div>
+      <h3>वास्तु यंत्र और उपाय</h3>
+      <p>बिना तोड़-फोड़ के पिरामिड, यंत्र, रंग और दर्पण से वास्तु दोष दूर।</p>
+      <div class="problem">समस्या: घर में नेगेटिव एनर्जी</div>
+      <div class="solution">समाधान: 24 घंटे में असर वाले उपाय</div>
+    </div>
+
+  </div>
+
+  <!-- 4 DIRECTIONS -->
+  <div class="direction-box">
+    <h2 class="section-title">4 दिशाओं का महत्व</h2>
+    <div class="direction-grid">
+      <div class="direction">पूर्व<br><small>स्वास्थ्य और नाम</small></div>
+      <div class="direction">पश्चिम<br><small>हानि और खर्च</small></div>
+      <div class="direction">उत्तर<br><small>धन और करियर</small></div>
+      <div class="direction">दक्षिण<br><small>स्थिरता और नाम</small></div>
+    </div>
+  </div>
+
+  <!-- BOOKING FORM -->
+  <div class="form-section">
+    <h2>वास्तु परामर्श के लिए अपॉइंटमेंट लें</h2>
+    <p style="text-align:center;color:#666;margin-bottom:20px;">घर आकर विजिट या ऑनलाइन नक्शे से परामर्श</p>
+    
+    <form>
+      <div class="form-grid">
+        <div class="input-group">
+          <label>पूरा नाम *</label>
+          <input type="text" placeholder="आपका नाम" required>
+        </div>
+        <div class="input-group">
+          <label>मोबाइल नंबर *</label>
+          <input type="tel" placeholder="10 अंकों का नंबर" required>
+        </div>
+        <div class="input-group">
+          <label>परामर्श का प्रकार *</label>
+          <select required>
+            <option value="">चुनें</option>
+            <option>आवासीय घर</option>
+            <option>दुकान / ऑफिस</option>
+            <option>फैक्ट्री</option>
+            <option>प्लॉट / नक्शा</option>
+            <option>ऑनलाइन नक्शा परामर्श</option>
+          </select>
+        </div>
+        <div class="input-group">
+          <label>पूरा पता *</label>
+          <input type="text" placeholder="शहर, जिला" required>
+        </div>
+      </div>
+      <div class="input-group" style="margin-top:20px;">
+        <label>आपकी समस्या बताएं</label>
+        <textarea rows="3" placeholder="जैसे: पैसा नहीं टिक रहा, बीमारी, व्यापार में घाटा"></textarea>
+      </div>
+      <button type="submit" class="btn-submit">📞 वास्तु विजिट बुक करें</button>
+    </form>
+  </div>
+
+  <div class="contact-bar">
+    <h3>तुरंत वास्तु विजिट के लिए कॉल करें</h3>
+    <p style="font-size:1.4rem;"><b>📞 +91 9584498448</b></p>
+    <p>सेवा क्षेत्र: जम्मू और आसपास | फीस: ₹1101 से शुरू</p>
+  </div>
+
+</div>
+
+<footer>
+  <p>|| वास्तु पुरुषाय नमः ||</p>
+  <p>© 2026 Sanatan Gyan. सभी अधिकार सुरक्षित</p>
+</footer>
+
+</body>
+</html>

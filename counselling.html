@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>जीवन परामर्श | पंडित जी से ज्योतिष सलाह</title>
+<link href="https://fonts.googleapis.com/css2?family=Tiro+Devanagari+Hindi:wght@400;700&family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --maroon: #8B0000;
+  --saffron: #FF9933;
+  --gold: #FFD700;
+  --blue: #1E3A8A;
+}
+
+*{margin:0;padding:0;box-sizing:border-box;}
+
+body{
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(135deg, #F0F8FF 0%, #E6F3FF 100%);
+  color: #333;
+}
+
+header{
+  background: linear-gradient(90deg, var(--blue), var(--maroon));
+  padding: 25px 20px;
+  text-align: center;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.logo-area{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 60px;
+  flex-wrap: wrap;
+}
+
+.logo-area img{
+  width: 110px;
+  height: 110px;
+  border-radius: 50%;
+  border: 4px solid var(--gold);
+  object-fit: cover;
+}
+
+header h1{
+  font-family: 'Tiro Devanagari Hindi', serif;
+  color: white;
+  font-size: 2.2rem;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.4);
+}
+
+.tagline{color: var(--gold);font-size: 1rem;margin-top: 5px;font-weight: 600;}
+
+.home-section{background:white;padding:15px;text-align:center;box-shadow:0 2px 10px rgba(0,0,0,0.1);}
+.home-btn{display:inline-block;background:linear-gradient(90deg,var(--blue),var(--maroon));color:white;padding:12px 30px;border-radius:50px;text-decoration:none;font-weight:700;border:2px solid var(--gold);}
+.home-btn:hover{transform:scale(1.08);}
+
+.container{max-width:1100px;margin:40px auto;padding:20px;}
+.section-title{text-align:center;font-family:'Tiro Devanagari Hindi',serif;font-size:2.2rem;color:var(--maroon);margin-bottom:10px;}
+.subtitle{text-align:center;color:#666;margin-bottom:40px;font-size:1.1rem;}
+
+/* PROFILE SECTION */
+.profile-section{
+  display:flex;gap:40px;align-items:center;background:white;padding:40px;border-radius:20px;
+  box-shadow:0 10px 30px rgba(0,0,0,0.1);margin-bottom:50px;flex-wrap:wrap;
+}
+.profile-img{flex:1;min-width:250px;text-align:center;}
+.profile-img img{width:250px;height:250px;border-radius:50%;border:6px solid var(--saffron);object-fit:cover;}
+.profile-info{flex:2;min-width:300px;}
+.profile-info h2{font-family:'Tiro Devanagari Hindi',serif;color:var(--maroon);font-size:1.8rem;margin-bottom:10px;}
+.profile-info p{line-height:1.8;color:#555;margin-bottom:15px;}
+.badges{display:flex;gap:10px;flex-wrap:wrap;margin-top:15px;}
+.badge{background:linear-gradient(90deg,var(--saffron),var(--gold));color:white;padding:8px 15px;border-radius:20px;font-size:0.85rem;font-weight:600;}
+
+/* SERVICES GRID */
+.services-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:25px;margin-bottom:50px;}
+.service-card{background:white;padding:25px;border-radius:15px;border-left:5px solid var(--blue);box-shadow:0 8px 20px rgba(0,0,0,0.08);transition:0.3s;}
+.service-card:hover{transform:translateY(-5px);border-left:5px solid var(--saffron);}
+.service-card h3{font-family:'Tiro Devanagari Hindi',serif;color:var(--blue);font-size:1.3rem;margin-bottom:10px;}
+.service-card p{color:#555;line-height:1.7;font-size:0.95rem;}
+
+/* FORM */
+.form-section{background:white;padding:40px;border-radius:20px;box-shadow:0 10px 30px rgba(0,0,0,0.1);}
+.form-section h2{font-family:'Tiro Devanagari Hindi',serif;color:var(--maroon);text-align:center;margin-bottom:20px;}
+.form-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:20px;}
+.input-group{display:flex;flex-direction:column;}
+.input-group label{font-weight:600;margin-bottom:8px;color:var(--blue);}
+.input-group input,.input-group select,.input-group textarea{
+  padding:12px;border:2px solid #ddd;border-radius:10px;font-size:1rem;font-family:'Poppins';
+}
+.input-group input:focus,.input-group textarea:focus{border-color:var(--saffron);outline:none;}
+.btn-submit{
+  background:linear-gradient(90deg,var(--saffron),var(--maroon));color:white;padding:15px 40px;
+  border:none;border-radius:50px;font-size:1.1rem;font-weight:700;cursor:pointer;margin-top:20px;
+  width:100%;transition:0.3s;
+}
+.btn-submit:hover{transform:scale(1.03);}
+
+.contact-bar{
+  background:linear-gradient(90deg,var(--maroon),var(--blue));color:white;padding:25px;text-align:center;
+  border-radius:15px;margin-top:40px;
+}
+.contact-bar h3{font-family:'Tiro Devanagari Hindi',serif;font-size:1.5rem;margin-bottom:10px;}
+
+footer{background:var(--maroon);color:white;text-align:center;padding:25px;margin-top:50px;font-family:'Tiro Devanagari Hindi',serif;}
+@media(max-width:768px){.profile-section{flex-direction:column;text-align:center;}}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="logo-area">
+    <img src="PD_Sharma2.png" alt="Logo">
+    <div>
+      <h1>जीवन परामर्श केंद्र</h1>
+      <p class="tagline">वैदिक ज्योतिष और जीवन समाधान</p>
+    </div>
+    <img src="PD_Sharma.png" alt="Pandit Ji">
+  </div>
+</header>
+
+<div class="home-section">
+  <a href="Index.html" class="home-btn">🏠 Home पर जाएं</a>
+</div>
+
+<div class="container">
+  <h2 class="section-title">पंडित जी से परामर्श लें</h2>
+  <p class="subtitle">25+ वर्षों का अनुभव | 5000+ संतुष्ट जातक</p>
+
+  <!-- PROFILE -->
+  <div class="profile-section">
+    <div class="profile-img">
+      <img src="PD_Sharma.png" alt="Pandit Ji">
+    </div>
+    <div class="profile-info">
+      <h2>पं. पी.डी. शर्मा जी</h2>
+      <p><b>वैदिक ज्योतिषाचार्य एवं जीवन परामर्श विशेषज्ञ</b></p>
+      <p>पंडित जी पिछले 25 वर्षों से वैदिक ज्योतिष, लाल किताब और हस्तरेखा के माध्यम से लोगों की समस्याओं का समाधान कर रहे हैं। विवाह, करियर, व्यापार, स्वास्थ्य और पारिवारिक समस्याओं के लिए सटीक मार्गदर्शन देते हैं।</p>
+      <div class="badges">
+        <div class="badge">✓ वैदिक ज्योतिष</div>
+        <div class="badge">✓ लाल किताब</div>
+        <div class="badge">✓ हस्तरेखा</div>
+        <div class="badge">✓ वास्तु</div>
+        <div class="badge">✓ कुंडली मिलान</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SERVICES -->
+  <h2 class="section-title">हमारी परामर्श सेवाएं</h2>
+  <div class="services-grid">
+    <div class="service-card">
+      <h3>1. कुंडली विश्लेषण</h3>
+      <p>जन्म कुंडली के आधार पर जीवन के सभी क्षेत्रों का विस्तृत विश्लेषण। ग्रह दशा और उपाय।</p>
+    </div>
+    <div class="service-card">
+      <h3>2. विवाह और रिश्ते</h3>
+      <p>विवाह में देरी, तलाक, पति-पत्नी में मनमुटाव और कुंडली मिलान की समस्या का समाधान।</p>
+    </div>
+    <div class="service-card">
+      <h3>3. करियर और व्यापार</h3>
+      <p>नौकरी, प्रमोशन, व्यापार में घाटा और सही करियर चुनने के लिए ज्योतिषीय मार्गदर्शन।</p>
+    </div>
+    <div class="service-card">
+      <h3>4. शिक्षा और संतान</h3>
+      <p>पढ़ाई में मन न लगना, विदेश में शिक्षा और संतान प्राप्ति में देरी का उपाय।</p>
+    </div>
+    <div class="service-card">
+      <h3>5. स्वास्थ्य और रोग</h3>
+      <p>बार-बार बीमार होना और पुरानी बीमारी के ज्योतिषीय कारण और निवारण।</p>
+    </div>
+    <div class="service-card">
+      <h3>6. वास्तु परामर्श</h3>
+      <p>घर और ऑफिस के वास्तु दोष दूर करके सुख-समृद्धि बढ़ाने के उपाय।</p>
+    </div>
+  </div>
+
+  <!-- BOOKING FORM -->
+  <div class="form-section">
+    <h2>ऑनलाइन अपॉइंटमेंट बुक करें</h2>
+    <form>
+      <div class="form-grid">
+        <div class="input-group">
+          <label>आपका नाम *</label>
+          <input type="text" placeholder="पूरा नाम लिखें" required>
+        </div>
+        <div class="input-group">
+          <label>मोबाइल नंबर *</label>
+          <input type="tel" placeholder="10 अंकों का नंबर" required>
+        </div>
+        <div class="input-group">
+          <label>जन्म तिथि</label>
+          <input type="date">
+        </div>
+        <div class="input-group">
+          <label>जन्म समय</label>
+          <input type="time">
+        </div>
+        <div class="input-group">
+          <label>जन्म स्थान</label>
+          <input type="text" placeholder="शहर, राज्य">
+        </div>
+        <div class="input-group">
+          <label>परामर्श का विषय *</label>
+          <select required>
+            <option value="">चुनें</option>
+            <option>कुंडली विश्लेषण</option>
+            <option>विवाह / रिश्ते</option>
+            <option>करियर / व्यापार</option>
+            <option>शिक्षा / संतान</option>
+            <option>स्वास्थ्य</option>
+            <option>वास्तु</option>
+            <option>अन्य</option>
+          </select>
+        </div>
+      </div>
+      <div class="input-group" style="margin-top:20px;">
+        <label>अपनी समस्या विस्तार से लिखें</label>
+        <textarea rows="4" placeholder="अपनी समस्या यहाँ लिखें..."></textarea>
+      </div>
+      <button type="submit" class="btn-submit">📞 अपॉइंटमेंट बुक करें यदि बुक न हो पाए तो कॉल करें </button>
+    </form>
+  </div>
+
+  <!-- CONTACT -->
+  <div class="contact-bar">
+    <h3>तुरंत बात करने के लिए कॉल करें</h3>
+    <p style="font-size:1.4rem;"><b>📞 +91 9584498448</b></p>
+    <p>समय: सुबह 9 बजे से रात 8 बजे तक | स्थान: ग्वालियर, मध्य प्रदेश</p>
+  </div>
+
+</div>
+
+<footer>
+  <p>|| गुरुर्ब्रह्मा गुरुर्विष्णुः गुरुर्देवो महेश्वरः ||</p>
+  <p>© 2026 सनातन ज्ञान. सभी अधिकार सुरक्षित</p>
+</footer>
+
+</body>
+</html>

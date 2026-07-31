@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<title>Astro P.D Sharma - Premium Services</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Poppins:wght@400;600;700&display=swap');
+*{margin:0;padding:0;box-sizing:border-box;}
+body{background: linear-gradient(135deg, #1a0000 0%, #4a0000 100%); font-family: 'Poppins', sans-serif; padding: 20px; min-height: 100vh;}
+.top-bar{display:flex; justify-content:space-between; align-items:center; max-width:1200px; margin:0 auto 20px;}
+.home-btn{background: linear-gradient(90deg, #FFD700, #FFA500); color:#2a0000; padding:10px 20px; border:none; border-radius:30px; font-weight:900; cursor:pointer; display:flex; align-items:center; gap:8px;}
+.main-header{text-align:center; margin-bottom:40px;}
+.main-header h1{
+  font-family:'Playfair Display', serif; 
+  color:#FFD700; 
+  font-size:42px; 
+  font-weight:900; 
+  text-shadow:0 0 20px rgba(255,215,0,0.8);
+}
+
+.main-header p{
+  color: #FFFFFF; /* YE WHITE HO GAYA */
+  font-size: 18px; 
+  font-weight: 600;
+  margin-top: 8px;
+  letter-spacing: 1px;
+}
+.services-grid{display:grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; max-width: 1200px; margin: 0 auto;}
+.service-card{background: rgba(0,0,0,0.4); border: 2px solid #FFD700; border-radius: 20px; padding: 30px 20px; text-align: center; cursor: pointer; transition: all 0.4s;}
+.service-card:hover{transform: translateY(-10px);}
+.service-card .icon{font-size: 50px; color: #FFD700; margin-bottom: 15px;}
+.service-card h3{color: #FFD700; font-size: 22px; font-weight: 800;}
+.service-card .fee{background: linear-gradient(90deg, #FFD700, #FFA500); color: #2a0000; padding: 8px 20px; border-radius: 20px; font-weight: 900; display: inline-block; margin-top:10px;}
+.popup{display: none; position: fixed; top:0; left:0; right:0; bottom:0; background: rgba(0,0,0,0.9); z-index: 999; justify-content: center; align-items: center; padding: 20px;}
+.popup.active{display: flex;}
+.popup-content{background: linear-gradient(180deg, #1a0000 0%, #4a0000 100%); border: 3px solid #FFD700; border-radius: 20px; padding: 30px; max-width: 550px; width: 100%; position: relative; max-height: 90vh; overflow-y: auto;}
+.close-btn{position: absolute; top:15px; right:20px; font-size:30px; color:#FFD700; cursor:pointer;}
+.form-group{margin-bottom:12px;}
+.form-group label{color:#fff; font-size:13px; display:block; margin-bottom:5px;}
+.form-group input, .form-group textarea, .form-group select{width:100%; padding:10px; background: rgba(0,0,0,0.5); border:1px solid #FFD700; border-radius:8px; color:#fff;}
+.btn-submit{background: linear-gradient(90deg, #FFD700, #FFA500); color:#2a0000; padding:14px 30px; border:none; border-radius:30px; font-weight:900; font-size:16px; cursor:pointer; width:100%; margin-top:10px;}
+.qr-box{background: rgba(0,0,0,0.4); border:2px dashed #FFD700; border-radius:15px; padding:20px; text-align:center; margin:15px 0;}
+.qr-box img{width:200px; height:200px; background:#fff; padding:10px; border-radius:10px;}
+.upi-id{background:#FFD700; color:#000; padding:10px; border-radius:8px; font-weight:900; cursor:pointer;}
+</style>
+</head>
+<body>
+
+<div class="top-bar">
+  <button class="home-btn" onclick="window.location.href='index.html'">
+    <i class="fa fa-home"></i> Home
+  </button>
+  <div style="color:#FFD700; font-weight:700;"><i class="fa fa-phone"></i> +91-9584498448</div>
+</div>
+
+<div class="main-header">
+  <h1>ASTRO : PRIYADARSHI SHARMA</h1>
+  <p>A GOOD ADVICE CAN CHANGE YOUR LIFE</p>
+</div>
+
+<div class="services-grid" id="homePage">
+  <!-- 5 PAYMENT WALE -->
+  <div class="service-card" onclick="openService('janampatri')"><div class="icon"><i class="fa fa-moon"></i></div><h3>Janampatri</h3><div class="fee">₹501</div></div>
+  <div class="service-card" onclick="openService('kundali')"><div class="icon"><i class="fa fa-heart"></i></div><h3>Kundali Milan</h3><div class="fee">₹251</div></div>
+  <div class="service-card" onclick="openService('vastu')"><div class="icon"><i class="fa fa-home"></i></div><h3>Vastu</h3><div class="fee">₹2100</div></div>
+  <div class="service-card" onclick="openService('numerology')"><div class="icon"><i class="fa fa-calculator"></i></div><h3>Numerology</h3><div class="fee">₹501</div></div>
+  <div class="service-card" onclick="openService('lalkitab')"><div class="icon"><i class="fa fa-book"></i></div><h3>Lal Kitab</h3><div class="fee">₹351</div></div>
+  <!-- 3 BINA PAYMENT WALE WAPAS -->
+  <div class="service-card" onclick="openService('pooja')"><div class="icon"><i class="fa fa-om"></i></div><h3>Pooja & Anushthan</h3><div class="fee">Booking Open</div></div>
+  <div class="service-card" onclick="openService('counsellor')"><div class="icon"><i class="fa fa-comments"></i></div><h3>Counsellor</h3><div class="fee">Contact Now</div></div>
+  <div class="service-card" onclick="openService('speaker')"><div class="icon"><i class="fa fa-sun"></i></div><h3>Spiritual Speaker</h3><div class="fee">Book Now</div></div>
+</div>
+
+<!-- 1. JANAMPATRI -->
+<div class="popup" id="janampatri">
+  <div class="popup-content">
+    <span class="close-btn" onclick="closePopup('janampatri')">&times;</span>
+    <h2 style="color:#FFD700; text-align:center;">Janampatri - ₹501</h2>
+    <div class="form-group"><label>Full Name</label><input type="text" id="jName"></div>
+    <div class="form-group"><label>Date of Birth</label><input type="date" id="jDob"></div>
+    <div class="form-group"><label>Time of Birth</label><input type="time" id="jTime"></div>
+    <div class="form-group"><label>Place of Birth</label><input type="text" id="jPlace"></div>
+    <div class="form-group"><label>Mobile</label><input type="tel" id="jMobile"></div>
+    <div class="qr-box">
+      <p style="color:#FFD700; font-weight:700;">Step 1: Scan & Pay ₹501</p>
+      <img src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=upi://pay?pa=YOURUPI@upi&pn=AstroPDSharma&am=501&tn=Janampatri">
+      <div class="upi-id" onclick="navigator.clipboard.writeText('YOURUPI@upi')">UPI: YOURUPI@upi <i class="fa fa-copy"></i></div>
+    </div>
+    <div class="form-group"><label>Step 2: Transaction ID</label><input type="text" id="jTxn"></div>
+    <button class="btn-submit" onclick="submitData('janampatri',501)">I Have Paid</button>
+  </div>
+</div>
+
+<!-- 2. KUNDALI MILAN -->
+<div class="popup" id="kundali">
+  <div class="popup-content">
+    <span class="close-btn" onclick="closePopup('kundali')">&times;</span>
+    <h2 style="color:#FFD700; text-align:center;">Kundali Milan - ₹251</h2>
+    <div class="form-group"><label>Your Name</label><input type="text" id="kYourName"></div>
+    <div class="form-group"><label>Your Mobile</label><input type="tel" id="kMobile"></div>
+    <hr style="border-color:#FFD700; margin:10px 0;">
+    <p style="color:#FFD700; text-align:center; font-weight:700;">BOY DETAILS</p>
+    <div class="form-group"><label>Boy Name</label><input type="text" id="kBoyName"></div>
+    <div class="form-group"><label>Boy DOB</label><input type="date" id="kBoyDob"></div>
+    <div class="form-group"><label>Boy Time</label><input type="time" id="kBoyTime"></div>
+    <div class="form-group"><label>Boy Place</label><input type="text" id="kBoyPlace"></div>
+    <hr style="border-color:#FFD700; margin:10px 0;">
+    <p style="color:#FFD700; text-align:center; font-weight:700;">GIRL DETAILS</p>
+    <div class="form-group"><label>Girl Name</label><input type="text" id="kGirlName"></div>
+    <div class="form-group"><label>Girl DOB</label><input type="date" id="kGirlDob"></div>
+    <div class="form-group"><label>Girl Time</label><input type="time" id="kGirlTime"></div>
+    <div class="form-group"><label>Girl Place</label><input type="text" id="kGirlPlace"></div>
+    <div class="qr-box">
+      <p style="color:#FFD700; font-weight:700;">Step 1: Scan & Pay ₹251</p>
+      <img src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=upi://pay?pa=YOURUPI@upi&pn=AstroPDSharma&am=251&tn=KundaliMilan">
+      <div class="upi-id" onclick="navigator.clipboard.writeText('YOURUPI@upi')">UPI: YOURUPI@upi <i class="fa fa-copy"></i></div>
+    </div>
+    <div class="form-group"><label>Step 2: Transaction ID</label><input type="text" id="kTxn"></div>
+    <button class="btn-submit" onclick="submitData('kundali',251)">I Have Paid</button>
+  </div>
+</div>
+
+<!-- 3. VASTU -->
+<div class="popup" id="vastu">
+  <div class="popup-content">
+    <span class="close-btn" onclick="closePopup('vastu')">&times;</span>
+    <h2 style="color:#FFD700; text-align:center;">Vastu - ₹2100</h2>
+    <div class="form-group"><label>Full Name</label><input type="text" id="vName"></div>
+    <div class="form-group"><label>Property Type</label><select id="vProperty"><option>Ghar</option><option>Dukan</option><option>Office</option></select></div>
+    <div class="form-group"><label>Full Address</label><textarea id="vAddress" rows="2"></textarea></div>
+    <div class="form-group"><label>Visit Date</label><input type="date" id="vDate"></div>
+    <div class="form-group"><label>Mobile</label><input type="tel" id="vMobile"></div>
+    <div class="qr-box">
+      <p style="color:#FFD700; font-weight:700;">Step 1: Scan & Pay ₹2100</p>
+      <img src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=upi://pay?pa=YOURUPI@upi&pn=AstroPDSharma&am=2100&tn=Vastu">
+      <div class="upi-id" onclick="navigator.clipboard.writeText('YOURUPI@upi')">UPI: YOURUPI@upi <i class="fa fa-copy"></i></div>
+    </div>
+    <div class="form-group"><label>Step 2: Transaction ID</label><input type="text" id="vTxn"></div>
+    <button class="btn-submit" onclick="submitData('vastu',2100)">I Have Paid</button>
+  </div>
+</div>
+
+<!-- 4. NUMEROLOGY -->
+<div class="popup" id="numerology">
+  <div class="popup-content">
+    <span class="close-btn" onclick="closePopup('numerology')">&times;</span>
+    <h2 style="color:#FFD700; text-align:center;">Numerology - ₹501</h2>
+    <div class="form-group"><label>Full Name</label><input type="text" id="nName"></div>
+    <div class="form-group"><label>Date of Birth</label><input type="date" id="nDob"></div>
+    <div class="form-group"><label>Question</label><textarea id="nQue" rows="2"></textarea></div>
+    <div class="form-group"><label>Mobile</label><input type="tel" id="nMobile"></div>
+    <div class="qr-box">
+      <p style="color:#FFD700; font-weight:700;">Step 1: Scan & Pay ₹501</p>
+      <img src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=upi://pay?pa=YOURUPI@upi&pn=AstroPDSharma&am=501&tn=Numerology">
+      <div class="upi-id" onclick="navigator.clipboard.writeText('YOURUPI@upi')">UPI: YOURUPI@upi <i class="fa fa-copy"></i></div>
+    </div>
+    <div class="form-group"><label>Step 2: Transaction ID</label><input type="text" id="nTxn"></div>
+    <button class="btn-submit" onclick="submitData('numerology',501)">I Have Paid</button>
+  </div>
+</div>
+
+<!-- 5. LAL KITAB -->
+<div class="popup" id="lalkitab">
+  <div class="popup-content">
+    <span class="close-btn" onclick="closePopup('lalkitab')">&times;</span>
+    <h2 style="color:#FFD700; text-align:center;">Lal Kitab - ₹351</h2>
+    <div class="form-group"><label>Problem</label><textarea id="lProblem" rows="3"></textarea></div>
+    <div class="form-group"><label>Date of Birth</label><input type="date" id="lDob"></div>
+    <div class="form-group"><label>Mobile</label><input type="tel" id="lMobile"></div>
+    <div class="qr-box">
+      <p style="color:#FFD700; font-weight:700;">Step 1: Scan & Pay ₹351</p>
+      <img src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=upi://pay?pa=YOURUPI@upi&pn=AstroPDSharma&am=351&tn=LalKitab">
+      <div class="upi-id" onclick="navigator.clipboard.writeText('YOURUPI@upi')">UPI: YOURUPI@upi <i class="fa fa-copy"></i></div>
+    </div>
+    <div class="form-group"><label>Step 2: Transaction ID</label><input type="text" id="lTxn"></div>
+    <button class="btn-submit" onclick="submitData('lalkitab',351)">I Have Paid</button>
+  </div>
+</div>
+
+<!-- 6. POOJA WAPAS -->
+<div class="popup" id="pooja">
+  <div class="popup-content">
+    <span class="close-btn" onclick="closePopup('pooja')">&times;</span>
+    <h2 style="color:#FFD700; text-align:center;"><i class="fa fa-om"></i> Pooja Booking</h2>
+    <div class="form-group"><label>Pooja Type</label><input type="text" id="pType" placeholder="Navgrah / Mangal / Kaal Sarp"></div>
+    <div class="form-group"><label>Date</label><input type="date" id="pDate"></div>
+    <div class="form-group"><label>Mobile</label><input type="tel" id="pMobile"></div>
+    <button class="btn-submit" onclick="submitSimple('Pooja', 'pType,pDate,pMobile')">Book Pooja Now</button>
+  </div>
+</div>
+
+<!-- 7. COUNSELLOR WAPAS -->
+<div class="popup" id="counsellor">
+  <div class="popup-content">
+    <span class="close-btn" onclick="closePopup('counsellor')">&times;</span>
+    <h2 style="color:#FFD700; text-align:center;"><i class="fa fa-comments"></i> Counsellor Session</h2>
+    <div class="form-group"><label>Name</label><input type="text" id="cName"></div>
+    <div class="form-group"><label>Issue</label><textarea id="cIssue" rows="3"></textarea></div>
+    <div class="form-group"><label>Mobile</label><input type="tel" id="cMobile"></div>
+    <button class="btn-submit" onclick="submitSimple('Counsellor', 'cName,cIssue,cMobile')">Book Session</button>
+  </div>
+</div>
+
+<!-- 8. SPEAKER WAPAS -->
+<div class="popup" id="speaker">
+  <div class="popup-content">
+    <span class="close-btn" onclick="closePopup('speaker')">&times;</span>
+    <h2 style="color:#FFD700; text-align:center;"><i class="fa fa-sun"></i> Speaker Booking</h2>
+    <div class="form-group"><label>Event Type</label><input type="text" id="sEvent"></div>
+    <div class="form-group"><label>Venue</label><input type="text" id="sVenue"></div>
+    <div class="form-group"><label>Date</label><input type="date" id="sDate"></div>
+    <div class="form-group"><label>Mobile</label><input type="tel" id="sMobile"></div>
+    <button class="btn-submit" onclick="submitSimple('Speaker', 'sEvent,sVenue,sDate,sMobile')">Book Speaker</button>
+  </div>
+</div>
+
+<script>
+const WHATSAPP = "919584498448";
+
+function openService(id){ 
+  document.getElementById('homePage').style.display='none';
+  document.getElementById(id).classList.add('active'); 
+}
+function closePopup(id){ 
+  document.getElementById(id).classList.remove('active'); 
+  document.getElementById('homePage').style.display='grid';
+}
+function goHome(){
+  document.querySelectorAll('.popup').forEach(p=>p.classList.remove('active'));
+  document.getElementById('homePage').style.display='grid';
+}
+
+function submitData(service, amount){
+  let txn = document.getElementById(service+'Txn').value;
+  let data = `Service: ${service}\nAmount: ₹${amount}\nTxn: ${txn}\n`;
+  
+  if(service=='janampatri') data += `Name: ${jName.value}\nDOB: ${jDob.value}\nTime: ${jTime.value}\nPlace: ${jPlace.value}\nMobile: ${jMobile.value}`;
+  if(service=='kundali') data += `Your: ${kYourName.value}\nBoy: ${kBoyName.value} ${kBoyDob.value} ${kBoyTime.value} ${kBoyPlace.value}\nGirl: ${kGirlName.value} ${kGirlDob.value} ${kGirlTime.value} ${kGirlPlace.value}\nMobile: ${kMobile.value}`;
+  if(service=='vastu') data += `Name: ${vName.value}\nProperty: ${vProperty.value}\nAddress: ${vAddress.value}\nDate: ${vDate.value}\nMobile: ${vMobile.value}`;
+  if(service=='numerology') data += `Name: ${nName.value}\nDOB: ${nDob.value}\nQue: ${nQue.value}\nMobile: ${nMobile.value}`;
+  if(service=='lalkitab') data += `Problem: ${lProblem.value}\nDOB: ${lDob.value}\nMobile: ${lMobile.value}`;
+
+  window.open(`https://wa.me/${WHATSAPP}?text=${encodeURIComponent(data)}`, '_blank');
+  alert('Thank You! Details WhatsApp pe bhej diye.');
+  goHome();
+}
+
+function submitSimple(service, fields){
+  let data = `New ${service} Booking\n`;
+  fields.split(',').forEach(f=> data += `${f}: ${document.getElementById(f).value}\n`);
+  window.open(`https://wa.me/${WHATSAPP}?text=${encodeURIComponent(data)}`, '_blank');
+  alert('Request Sent! Hum contact karenge.');
+  goHome();
+}
+</script>
+
+</body>
+</html>

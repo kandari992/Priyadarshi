@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ज्ञान वाणी | पंडित जी का मार्गदर्शन</title>
+<link href="https://fonts.googleapis.com/css2?family=Tiro+Devanagari+Hindi:wght@400;700&family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --saffron: #FF9933;
+  --maroon: #8B0000;
+  --gold: #FFD700;
+  --bg: #FFF8F0;
+}
+
+*{margin:0;padding:0;box-sizing:border-box;}
+
+body{
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(135deg, #FFF8F0 0%, #FFEFD5 100%);
+  color: #333;
+}
+
+header{
+  background: linear-gradient(90deg, var(--maroon), var(--saffron));
+  padding: 25px 20px;
+  text-align: center;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.logo-area{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 100px;
+  flex-wrap: wrap;
+}
+
+.logo-area img{
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  border: 4px solid var(--gold);
+  object-fit: cover;
+}
+
+header h1{
+  font-family: 'Tiro Devanagari Hindi', serif;
+  color: white;
+  font-size: 2.4rem;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+}
+
+.tagline{
+  color: var(--gold);
+  font-size: 1rem;
+  margin-top: 5px;
+}
+
+.home-section{
+  background: white;
+  padding: 15px;
+  text-align: center;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.home-btn{
+  display: inline-block;
+  background: linear-gradient(90deg, var(--saffron), var(--maroon));
+  color: white;
+  padding: 12px 30px;
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  border: 2px solid var(--gold);
+}
+
+.home-btn:hover{
+  transform: scale(1.08);
+  background: linear-gradient(90deg, var(--maroon), var(--saffron));
+}
+
+.container{
+  max-width: 1000px;
+  margin: 40px auto;
+  padding: 20px;
+}
+
+.section-title{
+  text-align: center;
+  font-family: 'Tiro Devanagari Hindi', serif;
+  font-size: 2.2rem;
+  color: var(--maroon);
+  margin-bottom: 15px;
+}
+
+.subtitle{
+  text-align: center;
+  color: #666;
+  margin-bottom: 40px;
+  font-size: 1.1rem;
+}
+
+.quote-box{
+  background: linear-gradient(135deg, var(--maroon), var(--saffron));
+  color: white;
+  padding: 40px 30px;
+  border-radius: 20px;
+  text-align: center;
+  margin-bottom: 40px;
+  box-shadow: 0 10px 30px rgba(139,0,0,0.3);
+}
+
+.quote-box h2{
+  font-family: 'Tiro Devanagari Hindi', serif;
+  font-size: 1.8rem;
+  margin-bottom: 15px;
+}
+
+.quote-box p{
+  font-size: 1.3rem;
+  font-style: italic;
+}
+
+.gyan-card{
+  background: white;
+  border-radius: 20px;
+  padding: 30px;
+  margin-bottom: 30px;
+  box-shadow: 0 10px 30px rgba(139,0,0,0.1);
+  border-left: 6px solid var(--saffron);
+  transition: all 0.4s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.gyan-card::before{
+  content: '“';
+  position: absolute;
+  top: 10px;
+  left: 15px;
+  font-size: 5rem;
+  color: var(--gold);
+  opacity: 0.15;
+  font-family: 'Tiro Devanagari Hindi', serif;
+}
+
+.gyan-card:hover{
+  transform: translateY(-5px);
+  box-shadow: 0 15px 40px rgba(255,153,51,0.25);
+  border-left: 6px solid var(--maroon);
+}
+
+.shlok{
+  font-family: 'Tiro Devanagari Hindi', serif;
+  font-size: 1.5rem;
+  color: var(--maroon);
+  line-height: 1.8;
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+.arth{
+  font-size: 1.1rem;
+  color: #444;
+  line-height: 1.8;
+  margin-bottom: 15px;
+  text-align: justify;
+}
+
+.sandesh{
+  background: linear-gradient(90deg, #FFF8E1, #FFEFD5);
+  padding: 15px;
+  border-radius: 12px;
+  border-left: 4px solid var(--gold);
+  font-weight: 600;
+  color: var(--maroon);
+}
+
+footer{
+  background: var(--maroon);
+  color: white;
+  text-align: center;
+  padding: 25px;
+  margin-top: 50px;
+  font-family: 'Tiro Devanagari Hindi', serif;
+}
+
+@media(max-width: 600px){
+  header h1{font-size: 1.6rem;}
+  .logo-area{gap: 20px;}
+  .logo-area img{width: 150px; height: 150px;}
+  .shlok{font-size: 1.2rem;}
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="logo-area">
+    <img src="PD_Sharma2.png" alt="Logo">
+    <div>
+      <h1>ज्ञान वाणी</h1>
+      <p class="tagline">पंडित जी का मार्गदर्शन</p>
+    </div>
+    <img src="PD_Sharma.png" alt="Pandit Ji" style="width:120px; height:120px; border-radius:50%; border:2px solid white;">
+  </div>
+</header>
+
+<div class="home-section">
+  <a href="Index.html" class="home-btn">🏠 Home पर जाएं</a>
+</div>
+
+<div class="container">
+  <h2 class="section-title">जीवन को दिशा देने वाले विचार</h2>
+  <p class="subtitle">रोज पढ़ो, जीवन बदलो</p>
+
+  <div class="quote-box">
+    <h2>आज का सुविचार</h2>
+    <p>"मन एव मनुष्याणां कारणं बन्धमोक्षयोः"</p>
+  </div>
+
+  <!-- 1 -->
+  <div class="gyan-card">
+    <div class="shlok">कर्मण्येवाधिकारस्ते मा फलेषु कदाचन</div>
+    <div class="arth"><b>अर्थ:</b> तुम्हारा अधिकार केवल कर्म करने में है, फल की चिंता मत करो। फल अपने आप मिलेगा।</div>
+    <div class="sandesh"><b>संदेश:</b> रिजल्ट की टेंशन छोड़ो, मेहनत करते रहो। भगवान मेहनत कभी व्यर्थ नहीं जाने देते।</div>
+  </div>
+
+  <!-- 2 -->
+  <div class="gyan-card">
+    <div class="shlok">उद्धरेदात्मनाऽत्मानं नात्मानमवसादयेत्</div>
+    <div class="arth"><b>अर्थ:</b> मनुष्य को चाहिए कि वो खुद अपना उद्धार करे। खुद ही अपना मित्र और खुद ही अपना शत्रु है।</div>
+    <div class="sandesh"><b>संदेश:</b> किसी के भरोसे मत बैठो। पहले खुद को मजबूत बनाओ।</div>
+  </div>
+
+  <!-- 3 -->
+  <div class="gyan-card">
+    <div class="shlok">संतोषः परमं सुखम्</div>
+    <div class="arth"><b>अर्थ:</b> संतोष ही सबसे बड़ा सुख है।</div>
+    <div class="sandesh"><b>संदेश:</b> दूसरों से तुलना करना बंद करो। जो है उसी में खुश रहो, यही असली अमीरी है।</div>
+  </div>
+
+  <!-- 4 -->
+  <div class="gyan-card">
+    <div class="shlok">मातृ देवो भव, पितृ देवो भव</div>
+    <div class="arth"><b>अर्थ:</b> माता-पिता को देवता के समान मानो।</div>
+    <div class="sandesh"><b>संदेश:</b> दुनिया के सारे तीर्थ माँ-बाप के चरणों में हैं। उनकी सेवा से बड़ा कोई धर्म नहीं।</div>
+  </div>
+
+  <!-- 5 -->
+  <div class="gyan-card">
+    <div class="shlok">विद्या ददाति विनयं</div>
+    <div class="arth"><b>अर्थ:</b> विद्या इंसान को विनम्र बनाती है।</div>
+    <div class="sandesh"><b>संदेश:</b> जितना ज्ञान बढ़े उतना अहंकार कम होना चाहिए। ज्ञानी वही है जो झुकना जानता है।</div>
+  </div>
+
+  <!-- 6 -->
+  <div class="gyan-card">
+    <div class="shlok">क्रोधो वैवस्वतो रिपुः</div>
+    <div class="arth"><b>अर्थ:</b> क्रोध इंसान का सबसे बड़ा शत्रु है।</div>
+    <div class="sandesh"><b>संदेश:</b> गुस्से में लिया गया फैसला हमेशा गलत होता है। 10 सेकंड रुक जाओ, फिर बोलो।</div>
+  </div>
+
+  <!-- 7 -->
+  <div class="gyan-card">
+    <div class="shlok">सत्यमेव जयते नानृतम्</div>
+    <div class="arth"><b>अर्थ:</b> सत्य की ही जीत होती है, झूठ की नहीं।</div>
+    <div class="sandesh"><b>संदेश:</b> छोटा सच बड़ी मुसीबत से बचा लेता है। हमेशा सच के रास्ते पर चलो।</div>
+  </div>
+
+  <!-- 8 -->
+  <div class="gyan-card">
+    <div class="shlok">आलस्यं हि मनुष्याणां शरीरस्थो महारिपुः</div>
+    <div class="arth"><b>अर्थ:</b> आलस्य मनुष्य के शरीर में रहने वाला सबसे बड़ा शत्रु है।</div>
+    <div class="sandesh"><b>संदेश:</b> "कल कर लेंगे" यही सोच आपको पीछे धकेल देती है। आज से शुरू करो।</div>
+  </div>
+
+  <!-- 9 -->
+  <div class="gyan-card">
+    <div class="shlok">यथा राजा तथा प्रजा</div>
+    <div class="arth"><b>अर्थ:</b> जैसा राजा होता है वैसी ही प्रजा होती है।</div>
+    <div class="sandesh"><b>संदेश:</b> घर का मुखिया जैसा आचरण करेगा, बच्चे वैसे ही बनेंगे। खुद उदाहरण बनो।</div>
+  </div>
+
+  <!-- 10 -->
+  <div class="gyan-card">
+    <div class="shlok">पर उपकाराय सतां विभूतयः</div>
+    <div class="arth"><b>अर्थ:</b> सज्जनों की संपत्ति दूसरों के उपकार के लिए होती है।</div>
+    <div class="sandesh"><b>संदेश:</b> कमाओ, लेकिन बाँटो भी। दान से धन बढ़ता है, घटता नहीं।</div>
+  </div>
+
+  <!-- 11 -->
+  <div class="gyan-card">
+    <div class="shlok">श्रद्धावान् लभते ज्ञानम्</div>
+    <div class="arth"><b>अर्थ:</b> श्रद्धा रखने वाले को ही ज्ञान प्राप्त होता है।</div>
+    <div class="sandesh"><b>संदेश:</b> गुरु, ग्रंथ और भगवान पर श्रद्धा रखो। शक करने से रास्ते बंद हो जाते हैं।</div>
+  </div>
+
+  <!-- 12 -->
+  <div class="gyan-card">
+    <div class="shlok">समयः सर्वस्य भेषजम्</div>
+    <div class="arth"><b>अर्थ:</b> समय हर दुख की दवा है।</div>
+    <div class="sandesh"><b>संदेश:</b> बुरे दिन भी नहीं रहते। धैर्य रखो, समय सब ठीक कर देगा।</div>
+  </div>
+
+  <!-- 13 -->
+  <div class="gyan-card">
+    <div class="shlok">अतिथि देवो भव</div>
+    <div class="arth"><b>अर्थ:</b> अतिथि को देवता के समान समझो।</div>
+    <div class="sandesh"><b>संदेश:</b> घर आए मेहमान का सम्मान करो। यही हमारी संस्कृति है।</div>
+  </div>
+
+  <!-- 14 -->
+  <div class="gyan-card">
+    <div class="shlok">नास्ति विद्या समं चक्षुः</div>
+    <div class="arth"><b>अर्थ:</b> विद्या के समान कोई आँख नहीं है।</div>
+    <div class="sandesh"><b>संदेश:</b> पढ़ते रहो। ज्ञान ही आपको अंधकार से उजाले में ले जाएगा।</div>
+  </div>
+
+  <!-- 15 -->
+  <div class="gyan-card">
+    <div class="shlok">धर्मो रक्षति रक्षितः</div>
+    <div class="arth"><b>अर्थ:</b> तुम धर्म की रक्षा करो, धर्म तुम्हारी रक्षा करेगा।</div>
+    <div class="sandesh"><b>संदेश:</b> गलत रास्ता छोड़कर सही रास्ता चुनो। ईमानदारी की जीत जरूर होती है।</div>
+  </div>
+
+  <!-- 16 -->
+  <div class="gyan-card">
+    <div class="shlok">लोभः पापस्य कारणम्</div>
+    <div class="arth"><b>अर्थ:</b> लालच पाप की जड़ है।</div>
+    <div class="sandesh"><b>संदेश:</b> जितना मिला है उसका शुक्र मनाओ। ज्यादा की चाह में जो है वो भी चला जाएगा।</div>
+  </div>
+
+  <!-- 17 -->
+  <div class="gyan-card">
+    <div class="shlok">संगतिः सज्जनैः कार्या</div>
+    <div class="arth"><b>अर्थ:</b> अच्छे लोगों की संगत करनी चाहिए।</div>
+    <div class="sandesh"><b>संदेश:</b> जैसे दोस्त रखोगे वैसे बनोगे। 5 अमीरों के साथ रहोगे तो 6वें तुम बनोगे।</div>
+  </div>
+
+  <!-- 18 -->
+  <div class="gyan-card">
+    <div class="shlok">मनः एव मनुष्याणां कारणं बन्धमोक्षयोः</div>
+    <div class="arth"><b>अर्थ:</b> मन ही इंसान के बंधन और मोक्ष का कारण है।</div>
+    <div class="sandesh"><b>संदेश:</b> सोच पॉजिटिव रखो। मन जीता तो जग जीता।</div>
+  </div>
+
+  <!-- 19 -->
+  <div class="gyan-card">
+    <div class="shlok">निंदक नियरे राखिए</div>
+    <div class="arth"><b>अर्थ:</b> निंदा करने वाले को पास रखो।</div>
+    <div class="sandesh"><b>संदेश:</b> जो आपकी गलती बताता है वही असली हितैषी है। आलोचना से सीखो।</div>
+  </div>
+
+  <!-- 20 -->
+  <div class="gyan-card">
+    <div class="shlok">अहिंसा परमो धर्मः</div>
+    <div class="arth"><b>अर्थ:</b> अहिंसा सबसे बड़ा धर्म है।</div>
+    <div class="sandesh"><b>संदेश:</b> शब्दों से भी चोट लगती है। किसी का दिल मत दुखाओ। प्रेम से रहो।</div>
+  </div>
+<div class="gyan-card"><div class="shlok">1. कर्मण्येवाधिकारस्ते मा फलेषु कदाचन</div><div class="arth"><b>अर्थ:</b> कर्म करो फल की चिंता मत करो।</div><div class="sandesh"><b>संदेश:</b> मेहनत करते रहो, रिजल्ट अपने आप आएगा।</div></div>
+  <div class="gyan-card"><div class="shlok">2. उद्धरेदात्मनाऽत्मानं नात्मानमवसादयेत्</div><div class="arth"><b>अर्थ:</b> अपना उद्धार खुद करो।</div><div class="sandesh"><b>संदेश:</b> किसी के भरोसे मत रहो।</div></div>
+  <div class="gyan-card"><div class="shlok">3. संतोषः परमं सुखम्</div><div class="arth"><b>अर्थ:</b> संतोष सबसे बड़ा सुख है।</div><div class="sandesh"><b>संदेश:</b> तुलना करना छोड़ दो।</div></div>
+  <div class="gyan-card"><div class="shlok">4. मातृ देवो भव, पितृ देवो भव</div><div class="arth"><b>अर्थ:</b> माता-पिता देवता हैं।</div><div class="sandesh"><b>संदेश:</b> उनकी सेवा ही पूजा है।</div></div>
+  <div class="gyan-card"><div class="shlok">5. विद्या ददाति विनयं</div><div class="arth"><b>अर्थ:</b> विद्या विनम्रता देती है।</div><div class="sandesh"><b>संदेश:</b> ज्ञानी वही जो झुकना जाने।</div></div>
+  <div class="gyan-card"><div class="shlok">6. क्रोधो वैवस्वतो रिपुः</div><div class="arth"><b>अर्थ:</b> क्रोध सबसे बड़ा शत्रु है।</div><div class="sandesh"><b>संदेश:</b> गुस्से में फैसला मत लो।</div></div>
+  <div class="gyan-card"><div class="shlok">7. सत्यमेव जयते नानृतम्</div><div class="arth"><b>अर्थ:</b> सत्य की जीत होती है।</div><div class="sandesh"><b>संदेश:</b> हमेशा सच बोलो।</div></div>
+  <div class="gyan-card"><div class="shlok">8. आलस्यं हि मनुष्याणां शरीरस्थो महारिपुः</div><div class="arth"><b>अर्थ:</b> आलस्य सबसे बड़ा शत्रु है।</div><div class="sandesh"><b>संदेश:</b> आज का काम आज करो।</div></div>
+  <div class="gyan-card"><div class="shlok">9. यथा राजा तथा प्रजा</div><div class="arth"><b>अर्थ:</b> जैसा मुखिया वैसी प्रजा।</div><div class="sandesh"><b>संदेश:</b> खुद उदाहरण बनो।</div></div>
+  <div class="gyan-card"><div class="shlok">10. पर उपकाराय सतां विभूतयः</div><div class="arth"><b>अर्थ:</b> सज्जन दूसरों के लिए जीते हैं।</div><div class="sandesh"><b>संदेश:</b> मदद करना सीखो।</div></div>
+  <div class="gyan-card"><div class="shlok">11. श्रद्धावान् लभते ज्ञानम्</div><div class="arth"><b>अर्थ:</b> श्रद्धा से ज्ञान मिलता है।</div><div class="sandesh"><b>संदेश:</b> गुरु पर भरोसा रखो।</div></div>
+  <div class="gyan-card"><div class="shlok">12. समयः सर्वस्य भेषजम्</div><div class="arth"><b>अर्थ:</b> समय सब ठीक कर देता है।</div><div class="sandesh"><b>संदेश:</b> धैर्य रखो।</div></div>
+  <div class="gyan-card"><div class="shlok">13. अतिथि देवो भव</div><div class="arth"><b>अर्थ:</b> अतिथि देवता है।</div><div class="sandesh"><b>संदेश:</b> मेहमान का सम्मान करो।</div></div>
+  <div class="gyan-card"><div class="shlok">14. नास्ति विद्या समं चक्षुः</div><div class="arth"><b>अर्थ:</b> विद्या जैसी कोई आँख नहीं।</div><div class="sandesh"><b>संदेश:</b> पढ़ते रहो।</div></div>
+  <div class="gyan-card"><div class="shlok">15. धर्मो रक्षति रक्षितः</div><div class="arth"><b>अर्थ:</b> धर्म की रक्षा करो।</div><div class="sandesh"><b>संदेश:</b> ईमानदारी से चलो।</div></div>
+  <div class="gyan-card"><div class="shlok">16. लोभः पापस्य कारणम्</div><div class="arth"><b>अर्थ:</b> लालच पाप की जड़ है।</div><div class="sandesh"><b>संदेश:</b> जरूरत से ज्यादा मत मांगो।</div></div>
+  <div class="gyan-card"><div class="shlok">17. संगतिः सज्जनैः कार्या</div><div class="arth"><b>अर्थ:</b> अच्छे लोगों की संगत करो।</div><div class="sandesh"><b>संदेश:</b> जैसे दोस्त वैसे तुम।</div></div>
+  <div class="gyan-card"><div class="shlok">18. मनः एव मनुष्याणां कारणं बन्धमोक्षयोः</div><div class="arth"><b>अर्थ:</b> मन ही बंधन और मुक्ति का कारण है।</div><div class="sandesh"><b>संदेश:</b> सोच सकारात्मक रखो।</div></div>
+  <div class="gyan-card"><div class="shlok">19. निंदक नियरे राखिए</div><div class="arth"><b>अर्थ:</b> आलोचक को पास रखो।</div><div class="sandesh"><b>संदेश:</b> गलती से सीखो।</div></div>
+  <div class="gyan-card"><div class="shlok">20. अहिंसा परमो धर्मः</div><div class="arth"><b>अर्थ:</b> अहिंसा सबसे बड़ा धर्म है।</div><div class="sandesh"><b>संदेश:</b> किसी का दिल मत दुखाओ।</div></div>
+  <div class="gyan-card"><div class="shlok">21. क्षमा वीरस्य भूषणम्</div><div class="arth"><b>अर्थ:</b> क्षमा वीरों का गहना है।</div><div class="sandesh"><b>संदेश:</b> माफ करना सीखो।</div></div>
+  <div class="gyan-card"><div class="shlok">22. विद्याधनं सर्वधनं प्रधानम्</div><div class="arth"><b>अर्थ:</b> विद्या का धन सबसे बड़ा है।</div><div class="sandesh"><b>संदेश:</b> पैसा चला जाएगा, ज्ञान नहीं।</div></div>
+  <div class="gyan-card"><div class="shlok">23. कृतज्ञता परमो धर्मः</div><div class="arth"><b>अर्थ:</b> एहसान मानना सबसे बड़ा धर्म है।</div><div class="sandesh"><b>संदेश:</b> शुक्र मनाओ।</div></div>
+  <div class="gyan-card"><div class="shlok">24. पुरुषार्थेन लभ्यते</div><div class="arth"><b>अर्थ:</b> पुरुषार्थ से सब मिलता है।</div><div class="sandesh"><b>संदेश:</b> भाग्य के भरोसे मत बैठो।</div></div>
+  <div class="gyan-card"><div class="shlok">25. स्वाध्यायात् मा प्रमदः</div><div class="arth"><b>अर्थ:</b> स्वाध्याय में प्रमाद मत करो।</div><div class="sandesh"><b>संदेश:</b> रोज कुछ नया सीखो।</div></div>
+  <div class="gyan-card"><div class="shlok">26. दानं स्वर्गस्य साधनम्</div><div class="arth"><b>अर्थ:</b> दान स्वर्ग का रास्ता है।</div><div class="sandesh"><b>संदेश:</b> जरूरत मंद की मदद करो।</div></div>
+  <div class="gyan-card"><div class="shlok">27. वाणी रसवती यस्य</div><div class="arth"><b>अर्थ:</b> जिसकी वाणी मीठी है।</div><div class="sandesh"><b>संदेश:</b> मीठा बोलो।</div></div>
+  <div class="gyan-card"><div class="shlok">28. चरित्रं रक्षतं रक्षितः</div><div class="arth"><b>अर्थ:</b> चरित्र की रक्षा करो।</div><div class="sandesh"><b>संदेश:</b> नाम एक बार खराब हुआ तो...।</div></div>
+  <div class="gyan-card"><div class="shlok">29. उद्योगिनं पुरुषसिंहम्</div><div class="arth"><b>अर्थ:</b> मेहनती ही शेर होता है।</div><div class="sandesh"><b>संदेश:</b> मेहनत करो, सफलता मिलेगी।</div></div>
+  <div class="gyan-card"><div class="shlok">30. विपत्ति काले स्मरणं</div><div class="arth"><b>अर्थ:</b> विपत्ति में भगवान को याद करो।</div><div class="sandesh"><b>संदेश:</b> प्रार्थना शक्ति देती है।</div></div>
+  <div class="gyan-card"><div class="shlok">31. असतो मा सद्गमय</div><div class="arth"><b>अर्थ:</b> असत्य से सत्य की ओर ले चलो।</div><div class="sandesh"><b>संदेश:</b> सही रास्ता चुनो।</div></div>
+  <div class="gyan-card"><div class="shlok">32. तमसो मा ज्योतिर्गमय</div><div class="arth"><b>अर्थ:</b> अंधकार से प्रकाश की ओर।</div><div class="sandesh"><b>संदेश:</b> ज्ञान अंधकार दूर करता है।</div></div>
+  <div class="gyan-card"><div class="shlok">33. मृत्योर्मा अमृतं गमय</div><div class="arth"><b>अर्थ:</b> मृत्यु से अमरता की ओर।</div><div class="sandesh"><b>संदेश:</b> अच्छे कर्म करो।</div></div>
+  <div class="gyan-card"><div class="shlok">34. एको धर्मः परं तपः</div><div class="arth"><b>अर्थ:</b> धर्म ही सबसे बड़ा तप है।</div><div class="sandesh"><b>संदेश:</b> धर्म पर चलो।</div></div>
+  <div class="gyan-card"><div class="shlok">35. गुरुर् ब्रह्मा गुरुर् विष्णुः</div><div class="arth"><b>अर्थ:</b> गुरु ही ब्रह्मा विष्णु है।</div><div class="sandesh"><b>संदेश:</b> गुरु का सम्मान करो।</div></div>
+  <div class="gyan-card"><div class="shlok">36. देशभक्ति परमो धर्मः</div><div class="arth"><b>अर्थ:</b> देशभक्ति सबसे बड़ा धर्म।</div><div class="sandesh"><b>संदेश:</b> देश के लिए जियो।</div></div>
+  <div class="gyan-card"><div class="shlok">37. स्वच्छता ईश्वर की पूजा</div><div class="arth"><b>अर्थ:</b> साफ सफाई भगवान की पूजा है।</div><div class="sandesh"><b>संदेश:</b> घर और मन दोनों साफ रखो।</div></div>
+  <div class="gyan-card"><div class="shlok">38. परिश्रमेण सर्वं लभ्यते</div><div class="arth"><b>अर्थ:</b> परिश्रम से सब मिलता है।</div><div class="sandesh"><b>संदेश:</b> मेहनत का कोई विकल्प नहीं।</div></div>
+  <div class="gyan-card"><div class="shlok">39. एकता में बल है</div><div class="arth"><b>अर्थ:</b> एकता से शक्ति आती है।</div><div class="sandesh"><b>संदेश:</b> साथ मिलकर रहो।</div></div>
+  <div class="gyan-card"><div class="shlok">40. समय का सदुपयोग करो</div><div class="arth"><b>अर्थ:</b> समय सबसे कीमती है।</div><div class="sandesh"><b>संदेश:</b> समय गया तो वापस नहीं आएगा।</div></div>
+  <div class="gyan-card"><div class="shlok">41. वृद्धों का सम्मान करो</div><div class="arth"><b>अर्थ:</b> बड़ों का आदर करो।</div><div class="sandesh"><b>संदेश:</b> आशीर्वाद से जीवन बनता है।</div></div>
+  <div class="gyan-card"><div class="shlok">42. स्त्री पूज्यते तत्र रमन्ते देवताः</div><div class="arth"><b>अर्थ:</b> जहां नारी का सम्मान वहां देवता।</div><div class="sandesh"><b>संदेश:</b> महिलाओं का सम्मान करो।</div></div>
+  <div class="gyan-card"><div class="shlok">43. प्रकृति रक्षति रक्षितः</div><b>अर्थ:</b> प्रकृति की रक्षा करो।</div><div class="sandesh"><b>संदेश:</b> पेड़ लगाओ, जीवन बचाओ।</div></div>
+  <div class="gyan-card"><div class="shlok">44. स्वास्थ्यं धनं श्रेष्ठम्</div><div class="arth"><b>अर्थ:</b> स्वास्थ्य सबसे बड़ा धन है।</div><div class="sandesh"><b>संदेश:</b> व्यायाम और योग करो।</div></div>
+  <div class="gyan-card"><div class="shlok">45. लोभ न करो</div><div class="arth"><b>अर्थ:</b> लालच मत करो।</div><div class="sandesh"><b>संदेश:</b> संतुष्ट रहो।</div></div>
+  <div class="gyan-card"><div class="shlok">46. ईर्ष्या मत करो</div><div class="arth"><b>अर्थ:</b> ईर्ष्या मन को जलाती है।</div><div class="sandesh"><b>संदेश:</b> दूसरों की खुशी में खुश रहो।</div></div>
+  <div class="gyan-card"><div class="shlok">47. मित्रता अनमोल है</div><div class="arth"><b>अर्थ:</b> सच्चा मित्र अनमोल है।</div><div class="sandesh"><b>संदेश:</b> दोस्ती निभाओ।</div></div>
+  <div class="gyan-card"><div class="shlok">48. वादा निभाओ</div><div class="arth"><b>अर्थ:</b> वचन का पालन करो।</div><div class="sandesh"><b>संदेश:</b> जुबान के पक्के बनो।</div></div>
+  <div class="gyan-card"><div class="shlok">49. नम्रता बड़ी चीज है</div><div class="arth"><b>अर्थ:</b> विनम्र बनो।</div><div class="sandesh"><b>संदेश:</b> झुकने वाला ही बड़ा होता है।</div></div>
+  <div class="gyan-card"><div class="shlok">50. आशा मत छोड़ो</div><div class="arth"><b>अर्थ:</b> उम्मीद जिंदा रखो।</div><div class="sandesh"><b>संदेश:</b> अंधेरे के बाद उजाला आता है।</div></div>
+  <div class="gyan-card"><div class="shlok">51. भय त्यागो</div><div class="arth"><b>अर्थ:</b> डर के आगे जीत है।</div><div class="sandesh"><b>संदेश:</b> साहस से काम लो।</div></div>
+  <div class="gyan-card"><div class="shlok">52. सच्ची मित्रता</div><div class="arth"><b>अर्थ:</b> मित्र संकट में काम आता है।</div><div class="sandesh"><b>संदेश:</b> अच्छे दोस्त चुनो।</div></div>
+  <div class="gyan-card"><div class="shlok">53. ज्ञान बांटो</div><div class="arth"><b>अर्थ:</b> ज्ञान बांटने से बढ़ता है।</div><div class="sandesh"><b>संदेश:</b> दूसरों को सिखाओ।</div></div>
+  <div class="gyan-card"><div class="shlok">54. कर्तव्य पहले</div><div class="arth"><b>अर्थ:</b> कर्तव्य सबसे पहले।</div><div class="sandesh"><b>संदेश:</b> जिम्मेदारी निभाओ।</div></div>
+  <div class="gyan-card"><div class="shlok">55. शांति मन में</div><div class="arth"><b>अर्थ:</b> शांति सबसे बड़ा सुख।</div><div class="sandesh"><b>संदेश:</b> ध्यान और प्रार्थना करो।</div></div>
+  <div class="gyan-card"><div class="shlok">56. अभिमान त्यागो</div><div class="arth"><b>अर्थ:</b> घमंड पतन का कारण है।</div><div class="sandesh"><b>संदेश:</b> विनम्र रहो।</div></div>
+  <div class="gyan-card"><div class="shlok">57. सेवा धर्म है</div><div class="arth"><b>अर्थ:</b> सेवा ही पूजा है।</div><div class="sandesh"><b>संदेश:</b> लोगों की मदद करो।</div></div>
+  <div class="gyan-card"><div class="shlok">58. शिक्षा अनिवार्य है</div><div class="arth"><b>अर्थ:</b> पढ़ाई जरूरी है।</div><div class="sandesh"><b>संदेश:</b> बच्चे को पढ़ाओ।</div></div>
+  <div class="gyan-card"><div class="shlok">59. अनुशासन सफलता की कुंजी</div><div class="arth"><b>अर्थ:</b> अनुशासन से सफलता मिलती है।</div><div class="sandesh"><b>संदेश:</b> समय पर काम करो।</div></div>
+  <div class="gyan-card"><div class="shlok">60. धैर्य रखो</div><div class="arth"><b>अर्थ:</b> धैर्य से सब संभव है।</div><div class="sandesh"><b>संदेश:</b> जल्दी मत करो।</div></div>
+  <div class="gyan-card"><div class="shlok">61. स्वच्छ विचार</div><div class="arth"><b>अर्थ:</b> सोच साफ रखो।</div><div class="sandesh"><b>संदेश:</b> जैसा सोचोगे वैसे बनोगे।</div></div>
+  <div class="gyan-card"><div class="shlok">62. परिवार प्रेम</div><div class="arth"><b>अर्थ:</b> परिवार सबसे बड़ा धन।</div><div class="sandesh"><b>संदेश:</b> साथ समय बिताओ।</div></div>
+  <div class="gyan-card"><div class="shlok">63. ईमानदारी</div><div class="arth"><b>अर्थ:</b> ईमानदारी सबसे बड़ी पूंजी।</div><div class="sandesh"><b>संदेश:</b> गलत काम मत करो।</div></div>
+  <div class="gyan-card"><div class="shlok">64. कर्म पूजा</div><div class="arth"><b>अर्थ:</b> काम ही पूजा है।</div><div class="sandesh"><b>संदेश:</b> मन लगाकर काम करो।</div></div>
+  <div class="gyan-card"><div class="shlok">65. सकारात्मक सोच</div><div class="arth"><b>अर्थ:</b> अच्छा सोचो अच्छा होगा।</div><div class="sandesh"><b>संदेश:</b> नकारात्मकता छोड़ो।</div></div>
+  <div class="gyan-card"><div class="shlok">66. गलती से सीखो</div><div class="arth"><b>अर्थ:</b> गलती गुरु है।</div><div class="sandesh"><b>संदेश:</b> हार से घबराओ मत।</div></div>
+  <div class="gyan-card"><div class="shlok">67. लक्ष्य तय करो</div><div class="arth"><b>अर्थ:</b> लक्ष्य के बिना जीवन व्यर्थ।</div><div class="sandesh"><b>संदेश:</b> सपना बड़ा रखो।</div></div>
+  <div class="gyan-card"><div class="shlok">68. प्रार्थना शक्ति</div><div class="arth"><b>अर्थ:</b> प्रार्थना से शक्ति मिलती है।</div><div class="sandesh"><b>संदेश:</b> रोज प्रार्थना करो।</div></div>
+  <div class="gyan-card"><div class="shlok">69. स्वावलंबी बनो</div><div class="arth"><b>अर्थ:</b> अपने पैरों पर खड़े हो।</div><div class="sandesh"><b>संदेश:</b> आत्मनिर्भर बनो।</div></div>
+  <div class="gyan-card"><div class="shlok">70. पर्यावरण बचाओ</div><div class="arth"><b>अर्थ:</b> धरती माता है।</div><div class="sandesh"><b>संदेश:</b> प्रदूषण मत फैलाओ।</div></div>
+  <div class="gyan-card"><div class="shlok">71. न्याय करो</div><div class="arth"><b>अर्थ:</b> न्याय सबसे बड़ा धर्म।</div><div class="sandesh"><b>संदेश:</b> सही का साथ दो।</div></div>
+  <div class="gyan-card"><div class="shlok">72. संयम रखो</div><b>अर्थ:</b> संयम से जीवन सुंदर।</div><div class="sandesh"><b>संदेश:</b> हर चीज की सीमा रखो।</div></div>
+  <div class="gyan-card"><div class="shlok">73. करुणा रखो</div><div class="arth"><b>अर्थ:</b> दया सबसे बड़ा गुण।</div><div class="sandesh"><b>संदेश:</b> कमजोर की मदद करो।</div></div>
+  <div class="gyan-card"><div class="shlok">74. सच्चा सुख</div><div class="arth"><b>अर्थ:</b> सुख देने में है।</div><div class="sandesh"><b>संदेश:</b> दूसरों को खुश करो।</div></div>
+  <div class="gyan-card"><div class="shlok">75. कृतज्ञ बनो</div><div class="arth"><b>अर्थ:</b> एहसान मत भूलो।</div><div class="sandesh"><b>संदेश:</b> धन्यवाद कहना सीखो।</div></div>
+  <div class="gyan-card"><div class="shlok">76. विवेक से काम लो</div><div class="arth"><b>अर्थ:</b> बुद्धि से फैसला करो।</div><div class="sandesh"><b>संदेश:</b> जल्दबाजी मत करो।</div></div>
+  <div class="gyan-card"><div class="shlok">77. सच्चाई का साथ</div><div class="arth"><b>अर्थ:</b> सच के साथ चलो।</div><div class="sandesh"><b>संदेश:</b> डर मत।</div></div>
+  <div class="gyan-card"><div class="shlok">78. प्रेम बांटो</div><div class="arth"><b>अर्थ:</b> प्रेम से जग जीतो।</div><div class="sandesh"><b>संदेश:</b> नफरत छोड़ो।</div></div>
+  <div class="gyan-card"><div class="shlok">79. कर्म का फल</div><div class="arth"><b>अर्थ:</b> जैसा करोगे वैसा भरोगे।</div><div class="sandesh"><b>संदेश:</b> अच्छे कर्म करो।</div></div>
+  <div class="gyan-card"><div class="shlok">80. आत्मविश्वास</div><div class="arth"><b>अर्थ:</b> खुद पर भरोसा रखो।</div><div class="sandesh"><b>संदेश:</b> तुम कर सकते हो।</div></div>
+  <div class="gyan-card"><div class="shlok">81. समय का सम्मान</div><div class="arth"><b>अर्थ:</b> समय भगवान है।</div><div class="sandesh"><b>संदेश:</b> समय बर्बाद मत करो।</div></div>
+  <div class="gyan-card"><div class="shlok">82. त्याग की भावना</div><div class="arth"><b>अर्थ:</b> त्याग से महानता।</div><div class="sandesh"><b>संदेश:</b> दूसरों के लिए जियो।</div></div>
+  <div class="gyan-card"><div class="shlok">83. सरल जीवन</div><div class="arth"><b>अर्थ:</b> सादा जीवन उच्च विचार।</div><div class="sandesh"><b>संदेश:</b> दिखावा मत करो।</div></div>
+  <div class="gyan-card"><div class="shlok">84. संस्कार</div><div class="arth"><b>अर्थ:</b> संस्कार सबसे बड़ी विरासत।</div><div class="sandesh"><b>संदेश:</b> बच्चों को अच्छे संस्कार दो।</div></div>
+  <div class="gyan-card"><div class="shlok">85. राष्ट्र निर्माण</div><div class="arth"><b>अर्थ:</b> देश सेवा धर्म है।</div><div class="sandesh"><b>संदेश:</b> देश के लिए कुछ करो।</div></div>
+  <div class="gyan-card"><div class="shlok">86. गीता का सार</div><div class="arth"><b>अर्थ:</b> समत्व योग है।</div><div class="sandesh"><b>संदेश:</b> सुख दुख समान।</div></div>
+  <div class="gyan-card"><div class="shlok">87. हनुमान गुण</div><div class="arth"><b>अर्थ:</b> सेवा और समर्पण।</div><div class="sandesh"><b>संदेश:</b> निस्वार्थ बनो।</div></div>
+  <div class="gyan-card"><div class="shlok">88. राम आदर्श</div><div class="arth"><b>अर्थ:</b> मर्यादा पुरुषोत्तम।</div><div class="sandesh"><b>संदेश:</b> मर्यादा में रहो।</div></div>
+  <div class="gyan-card"><div class="shlok">89. कृष्ण नीति</div><div class="arth"><b>अर्थ:</b> कर्म और धर्म।</div><div class="sandesh"><b>संदेश:</b> परिस्थिति अनुसार निर्णय लो।</div></div>
+  <div class="gyan-card"><div class="shlok">90. शिक्षा का सम्मान</div><div class="arth"><b>अर्थ:</b> गुरु को भगवान मानो।</div><div class="sandesh"><b>संदेश:</b> शिक्षक का आदर करो।</div></div>
+  <div class="gyan-card"><div class="shlok">91. दया धर्म का मूल</div><div class="arth"><b>अर्थ:</b> दया से धर्म चलता है।</div><div class="sandesh"><b>संदेश:</b> जीवों पर दया करो।</div></div>
+  <div class="gyan-card"><div class="shlok">92. पवित्रता</div><div class="arth"><b>अर्थ:</b> तन मन धन पवित्र रखो।</div><div class="sandesh"><b>संदेश:</b> शुद्ध आचरण करो।</div></div>
+  <div class="gyan-card"><div class="shlok">93. संतोष धन</div><div class="arth"><b>अर्थ:</b> संतोषी सदा सुखी।</div><div class="sandesh"><b>संदेश:</b> ज्यादा की चाह मत करो।</div></div>
+  <div class="gyan-card"><div class="shlok">94. परोपकार</div><div class="arth"><b>अर्थ:</b> दूसरों के काम आओ।</div><div class="sandesh"><b>संदेश:</b> मानवता सबसे बड़ा धर्म।</div></div>
+</div>
+<div class="gyan-card"><div class="shlok">95. मेहनत का फल</div><div class="arth"><b>अर्थ:</b> मेहनत कभी व्यर्थ नहीं जाती।</div><div class="sandesh"><b>संदेश:</b> लगे रहो, सफलता जरूर मिलेगी।</div></div>
+
+<div class="gyan-card"><div class="shlok">96. विनम्रता</div><div class="arth"><b>अर्थ:</b> जो झुकता है वही ऊपर उठता है।</div><div class="sandesh"><b>संदेश:</b> घमंड छोड़कर नम्र बनो।</div></div>
+
+<div class="gyan-card"><div class="shlok">97. विश्वास</div><div class="arth"><b>अर्थ:</b> विश्वास से बड़े से बड़ा काम हो जाता है।</div><div class="sandesh"><b>संदेश:</b> खुद पर और भगवान पर भरोसा रखो।</div></div>
+
+<div class="gyan-card"><div class="shlok">98. क्षमा</div><div class="arth"><b>अर्थ:</b> माफ करने से दिल हल्का होता है।</div><div class="sandesh"><b>संदेश:</b> पुरानी बातें भूलकर आगे बढ़ो।</div></div>
+
+<div class="gyan-card"><div class="shlok">99. सकारात्मकता</div><div class="arth"><b>अर्थ:</b> जैसा सोचोगे वैसा जीवन बनेगा।</div><div class="sandesh"><b>संदेश:</b> हर स्थिति में अच्छा देखो।</div></div>
+
+<div class="gyan-card"><div class="shlok">100. जीवन का सार</div><div class="arth"><b>अर्थ:</b> जियो और जीने दो।</div><div class="sandesh"><b>संदेश:</b> प्रेम, शांति और सेवा से जीवन सार्थक बनता है।</div></div>
+
+</div>
+
+<footer>
+  <p>|| गुरुर्ब्रह्मा गुरुर्विष्णुः गुरुर्देवो महेश्वरः ||</p>
+  <p>© 2026 Sanatan Gyan. सभी अधिकार सुरक्षित</p>
+</footer>
+
+</body>
+</html>

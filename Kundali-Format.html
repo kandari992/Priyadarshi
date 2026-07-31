@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kundali Format - Pandit Priyadarshini Sharma</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+<style>
+/* CHANGE 1: Yaha 10mm margin de diya */
+@page { size: A4; margin: 10mm; }
+
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif;}
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+
+body{background:#f5f5f5;padding:0;}
+
+.container{
+  width:190mm; /* 210 - 10 - 10 */
+  height:277mm; /* 297 - 10 - 10 */
+  margin:0 auto;
+  background:white;
+  padding:10mm; /* ab sab taraf barabar */
+  border:2px solid #8b0000;
+  box-shadow:none;
+  box-sizing:border-box;
+}
+
+.header{text-align:center;border-bottom:3px solid #8b0000;padding-bottom:20px;margin-bottom:30px;}
+.header h1{color:#8b0000;font-size:32px;font-family:'Playfair Display',serif;}
+.header p{color:#ff6f00;font-weight:600;}
+
+.top-info{display:grid;grid-template-columns:1fr 1fr 1fr;gap:20px;margin-bottom:30px;}
+.input-box label{display:block;font-weight:700;color:#8b0000;margin-bottom:5px;font-size:14px;}
+.input-box input,.input-box select{width:100%;padding:10px;border:2px solid #ffdd00;border-radius:8px;font-size:16px;}
+
+.kundali-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:5px;margin:30px 0;}
+.kundali-box{border:2px solid #8b0000;height:120px;padding:8px;position:relative;background:#fffdf8;}
+.kundali-box .house-num{position:absolute;top:5px;left:5px;font-weight:700;color:#8b0000;font-size:12px;}
+.kundali-box textarea{width:100%;height:80px;border:none;background:transparent;resize:none;font-size:14px;outline:none;}
+
+.remedies{margin-top:30px;}
+.remedies h3{color:#8b0000;margin-bottom:15px;}
+.remedies textarea{width:100%;height:150px;padding:15px;border:2px solid #ffdd00;border-radius:10px;font-size:16px;resize:vertical;}
+
+.btn-section{text-align:center;margin-top:30px;display:flex;gap:15px;justify-content:center;flex-wrap:wrap;}
+.btn{background:#ff9800;color:white;padding:15px 40px;border-radius:50px;border:none;font-weight:700;font-size:18px;cursor:pointer;display:inline-flex;align-items:center;gap:10px;box-shadow:0 4px 15px rgba(255,152,0,0.4); text-decoration:none;}
+.btn:hover{background:#fb8c00;transform:translateY(-3px);}
+.btn-print{background:#25D366;}
+.btn-home{background:#ff6f00;} /* HOME BUTTON KA COLOR */
+
+@media print{.btn-section{display:none;} body{background:white;}}
+</style>
+</head>
+<body>
+
+<div class="container" id="kundaliPDF">
+  
+  <div class="header">
+    <h1>ॐ श्री गणेशाय नमः  卐 </h1>
+    <p>Astrology by Pandit Priyadarshi Sharma | Gwalior, Mdhya Pradesh</p>
+    <p style="font-size:14px;color:#666;">Contact: +91 9584498448</p>
+  </div>
+
+  <div class="top-info">
+    <div class="input-box"><label>नाम / Name *</label><input type="text" id="name" placeholder="Pura Naam"></div>
+    <div class="input-box"><label>जन्म तिथि / DOB *</label><input type="date" id="dob"></div>
+    <div class="input-box"><label>जन्म समय / Time *</label><input type="time" id="tob"></div>
+    <div class="input-box"><label>जन्म स्थान / Place *</label><input type="text" id="pob" placeholder="City, State"></div>
+    <div class="input-box"><label>लिंग / Gender</label><select id="gender"><option>Purush</option><option>Mahila</option></select></div>
+    <div class="input-box"><label>राशि / Rashi</label><input type="text" id="rashi" placeholder="Mithun"></div>
+  </div>
+
+  <h3 style="text-align:center;color:#8b0000;margin-bottom:10px;">जन्म कुंडली / BIRTH CHART</h3>
+  
+  <div class="kundali-grid">
+    <div class="kundali-box"><div class="house-num">1</div><textarea placeholder="Lagna, Surya..."></textarea></div>
+    <div class="kundali-box"><div class="house-num">2</div><textarea placeholder="Dhan, Kutumb..."></textarea></div>
+    <div class="kundali-box"><div class="house-num">3</div><textarea placeholder="Parakram..."></textarea></div>
+    <div class="kundali-box"><div class="house-num">4</div><textarea placeholder="Sukh, Mata..."></textarea></div>
+    <div class="kundali-box"><div class="house-num">5</div><textarea placeholder="Santaan, Vidya..."></textarea></div>
+    <div class="kundali-box"><div class="house-num">6</div><textarea placeholder="Rog, Rinn..."></textarea></div>
+    <div class="kundali-box"><div class="house-num">7</div><textarea placeholder="Vivah, Partner..."></textarea></div>
+    <div class="kundali-box"><div class="house-num">8</div><textarea placeholder="Aayu, Durghatna..."></textarea></div>
+    <div class="kundali-box"><div class="house-num">9</div><textarea placeholder="Bhagya, Guru..."></textarea></div>
+    <div class="kundali-box"><div class="house-num">10</div><textarea placeholder="Karma, Pita..."></textarea></div>
+    <div class="kundali-box"><div class="house-num">11</div><textarea placeholder="Labh, Mitra..."></textarea></div>
+    <div class="kundali-box"><div class="house-num">12</div><textarea placeholder="Vyaya, Moksha..."></textarea></div>
+  </div>
+
+  <div class="remedies">
+    <h3>🔮 ज्योतिषीय विश्लेषण एवं उपाय / Analysis & Remedies</h3>
+    <textarea placeholder="Yaha grah dosh, yog aur upay likhein...&#10;Ex: Mangal 7th house me hai. Vivah me deri. Hanuman Chalisa ka path karein."></textarea>
+  </div>
+
+</div>
+
+<div class="btn-section">
+  <button class="btn" onclick="downloadPDF()"><i class="fa fa-download"></i> PDF Download Karein</button>
+  <button class="btn btn-print" onclick="window.print()"><i class="fa fa-print"></i> Print Karein</button>
+  <a href="index.html" class="btn btn-home"><i class="fa fa-home"></i> Home</a> <!-- HOME BUTTON ADD KIYA -->
+</div>
+
+<script>
+function downloadPDF(){
+  const element = document.getElementById('kundaliPDF');
+  const name = document.getElementById('name').value || 'Kundali';
+  const opt = {
+    margin: [10,10,10,10], /* CHANGE 2: Yaha bhi 10mm kar diya */
+    filename: name + '_Kundali.pdf',
+    image: { type: 'jpeg', quality: 0.98 },
+    html2canvas: { scale: 2 },
+    jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' }
+  };
+  html2pdf().set(opt).from(element).save();
+}
+</script>
+
+</body>
+</html>

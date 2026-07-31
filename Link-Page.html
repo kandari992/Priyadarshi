@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<title>Astro P.D Sharma - Premium Services</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<script src="https://checkout.razorpay.com/v1/checkout.js"></script> <!-- RAZORPAY -->
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Poppins:wght@400;600;700&display=swap');
+
+*{margin:0;padding:0;box-sizing:border-box;}
+body{
+  background: linear-gradient(135deg, #1a0000 0%, #4a0000 100%);
+  font-family: 'Poppins', sans-serif;
+  padding: 20px;
+  min-height: 100vh;
+}
+
+.main-header{text-align:center; margin-bottom:40px; padding:20px;}
+.main-header h1{
+  font-family:'Playfair Display', serif;
+  color:#FFD700; font-size:42px; font-weight:900;
+  text-shadow:0 0 20px rgba(255,215,0,0.8);
+}
+.main-header p{color:#fff; font-size:16px; margin-top:8px;}
+
+.services-grid{
+  display:grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 25px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.service-card{
+  background: rgba(0,0,0,0.4);
+  border: 2px solid #FFD700;
+  border-radius: 20px;
+  padding: 30px 20px;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.4s;
+  box-shadow: 0 0 20px rgba(255,215,0,0.2);
+  backdrop-filter: blur(10px);
+}
+.service-card:hover{
+  transform: translateY(-10px);
+  box-shadow: 0 0 40px rgba(255,215,0,0.6);
+  border-color: #FFA500;
+}
+.service-card .icon{font-size: 50px; color: #FFD700; margin-bottom: 15px; text-shadow: 0 0 15px #FFD700;}
+.service-card h3{color: #FFD700; font-size: 22px; font-weight: 800; margin-bottom: 10px;}
+.service-card p{color: #fff; font-size: 13px; line-height: 1.6; margin-bottom: 15px;}
+.service-card .fee{
+  background: linear-gradient(90deg, #FFD700, #FFA500);
+  color: #2a0000; padding: 8px 20px; border-radius: 20px;
+  font-weight: 900; font-size: 14px; display: inline-block;
+}
+
+.popup{
+  display: none; position: fixed; top:0; left:0; right:0; bottom:0;
+  background: rgba(0,0,0,0.9); z-index: 999;
+  justify-content: center; align-items: center; padding: 20px;
+}
+.popup.active{display: flex;}
+.popup-content{
+  background: linear-gradient(180deg, #1a0000 0%, #4a0000 100%);
+  border: 3px solid #FFD700; border-radius: 20px; padding: 30px;
+  max-width: 600px; width: 100%; position: relative;
+  box-shadow: 0 0 50px rgba(255,215,0,0.5); max-height: 90vh; overflow-y: auto;
+}
+.close-btn{position: absolute; top:15px; right:20px; font-size:30px; color:#FFD700; cursor:pointer;}
+.popup-content h2{
+  color:#FFD700; font-size:24px; font-family:'Playfair Display', serif;
+  text-align:center; margin-bottom:20px;
+}
+.popup-content .form-group{margin-bottom:15px;}
+.popup-content label{color:#fff; font-size:13px; display:block; margin-bottom:5px;}
+.popup-content input, .popup-content textarea, .popup-content select{
+  width:100%; padding:10px;
+  background: rgba(0,0,0,0.5);
+  border:1px solid #FFD700; border-radius:8px; color:#fff;
+}
+.btn-submit{
+  background: linear-gradient(90deg, #FFD700, #FFA500);
+  color:#2a0000; padding:14px 30px; border:none; border-radius:30px;
+  font-weight:900; font-size:16px; cursor:pointer; width:100%; margin-top:10px;
+}
+.payment-box{
+  background: rgba(0,0,0,0.3); border:1px solid #FFD700; 
+  border-radius:10px; padding:12px; margin:15px 0;
+}
+</style>
+</head>
+<body>
+
+<div class="main-header">
+  <h1>ASTRO P.D SHARMA</h1>
+  <p>A GOOD ADVICE CAN CHANGE YOUR LIFE</p>
+</div>
+
+<div class="services-grid">
+  
+  <div class="service-card" onclick="openPopup('janampatri')">
+    <div class="icon"><i class="fa fa-moon"></i></div><h3>Janampatri / Kundali</h3>
+    <p>Detailed 15 Page Report + Remedies</p><div class="fee">Fee: ₹501</div>
+  </div>
+
+  <div class="service-card" onclick="openPopup('kundali')">
+    <div class="icon"><i class="fa fa-heart"></i></div><h3>Kundali Milan</h3>
+    <p>Shadi ke liye 36 Gun Milan + Dosh Nivaran</p><div class="fee">Fee: ₹251</div>
+  </div>
+
+  <div class="service-card" onclick="openPopup('vastu')">
+    <div class="icon"><i class="fa fa-home"></i></div><h3>Vastu Consultation</h3>
+    <p>Ghar, Dukan, Office ke liye Vastu</p><div class="fee">Visit: ₹2100</div>
+  </div>
+
+  <div class="service-card" onclick="openPopup('numerology')">
+    <div class="icon"><i class="fa fa-calculator"></i></div><h3>Numerology</h3>
+    <p>Naam aur DOB se Career, Business Advice</p><div class="fee">Fee: ₹501</div>
+  </div>
+
+  <div class="service-card" onclick="openPopup('lalkitab')">
+    <div class="icon"><i class="fa fa-book"></i></div><h3>Lal Kitab Upay</h3>
+    <p>Graha Dosh ke easy aur saste upay</p><div class="fee">Fee: ₹351</div>
+  </div>
+
+  <div class="service-card" onclick="openPopup('pooja')">
+    <div class="icon"><i class="fa fa-om"></i></div><h3>Pooja & Anushthan</h3>
+    <p>Navgrah Shanti, Mangal Dosh, Kaal Sarp Pooja</p><div class="fee">Booking Open</div>
+  </div>
+
+  <div class="service-card" onclick="openPopup('counsellor')">
+    <div class="icon"><i class="fa fa-comments"></i></div><h3>Counsellor</h3>
+    <p>Life, Career, Relationship Guidance</p><div class="fee">Contact Now</div>
+  </div>
+
+  <div class="service-card" onclick="openPopup('speaker')">
+    <div class="icon"><i class="fa fa-sun"></i></div><h3>Spiritual Speaker & Katha</h3>
+    <p>Renowned Speaker for Katha & Pravachan</p><div class="fee">Book Now</div>
+  </div>
+
+</div>
+
+<!-- 1. JANAMPATRI -->
+<div class="popup" id="janampatri">
+  <div class="popup-content">
+    <span class="close-btn" onclick="closePopup('janampatri')">&times;</span>
+    <h2><i class="fa fa-moon"></i> Janampatri / Kundali - ₹501</h2>
+    <input type="text" id="jName" placeholder="Full Name" required>
+    <input type="date" id="jDob" required>
+    <input type="time" id="jTime" required>
+    <input type="text" id="jPlace" placeholder="Place of Birth" required>
+    <input type="tel" id="jMobile" placeholder="Mobile" required>
+    <button class="btn-submit" onclick="payNow('Janampatri', 501)">₹501 Pay & Get Report</button>
+  </div>
+</div>
+
+<!-- 2. KUNDALI -->
+<div class="popup" id="kundali">
+  <div class="popup-content">
+    <span class="close-btn" onclick="closePopup('kundali')">&times;</span>
+    <h2><i class="fa fa-heart"></i> Kundali Milan - ₹251</h2>
+    <input type="text" id="kBoyName" placeholder="Boy Name" required>
+    <input type="text" id="kGirlName" placeholder="Girl Name" required>
+    <textarea id="kBoyDetail" placeholder="Boy DOB + Time + Place" rows="2" required></textarea>
+    <textarea id="kGirlDetail" placeholder="Girl DOB + Time + Place" rows="2" required></textarea>
+    <input type="tel" id="kMobile" placeholder="Mobile" required>
+    <button class="btn-submit" onclick="payNow('Kundali Milan', 251)">₹251 Pay & Check 36 Gun</button>
+  </div>
+</div>
+
+<!-- 3. VASTU -->
+<div class="popup" id="vastu">
+  <div class="popup-content">
+    <span class="close-btn" onclick="closePopup('vastu')">&times;</span>
+    <h2><i class="fa fa-home"></i> Vastu Consultation - ₹2100</h2>
+    <input type="text" id="vName" placeholder="Full Name" required>
+    <select id="vProperty" required><option value="">Property Type</option>
+      <option>Ghar</option><option>Dukan</option><option>Office</option></select>
+    <textarea id="vAddress" placeholder="Full Address" rows="2" required></textarea>
+    <input type="date" id="vDate" required>
+    <input type="tel" id="vMobile" placeholder="Mobile" required>
+    <div class="payment-box">
+      <label><input type="radio" name="vpay" value="online" checked> Online Payment</label><br>
+      <label><input type="radio" name="vpay" value="cod"> Cash on Visit</label>
+    </div>
+    <button class="btn-submit" onclick="payVastu()">Book Visit ₹2100</button>
+  </div>
+</div>
+
+<!-- 4. NUMEROLOGY -->
+<div class="popup" id="numerology">
+  <div class="popup-content">
+    <span class="close-btn" onclick="closePopup('numerology')">&times;</span>
+    <h2><i class="fa fa-calculator"></i> Numerology - ₹501</h2>
+    <input type="text" id="nName" placeholder="Full Name" required>
+    <input type="date" id="nDob" required>
+    <textarea id="nQue" placeholder="Question: Career/Business/Love" rows="2" required></textarea>
+    <input type="tel" id="nMobile" placeholder="Mobile" required>
+    <button class="btn-submit" onclick="payNow('Numerology', 501)">₹501 Get Analysis</button>
+  </div>
+</div>
+
+<!-- 5. LAL KITAB -->
+<div class="popup" id="lalkitab">
+  <div class="popup-content">
+    <span class="close-btn" onclick="closePopup('lalkitab')">&times;</span>
+    <h2><i class="fa fa-book"></i> Lal Kitab Upay - ₹351</h2>
+    <textarea id="lProblem" placeholder="Problem bataiye" rows="3" required></textarea>
+    <input type="date" id="lDob" required>
+    <input type="tel" id="lMobile" placeholder="Mobile" required>
+    <button class="btn-submit" onclick="payNow('Lal Kitab', 351)">₹351 Get Remedies</button>
+  </div>
+</div>
+
+<!-- 6. POOJA -->
+<div class="popup" id="pooja">
+  <div class="popup-content">
+    <span class="close-btn" onclick="closePopup('pooja')">&times;</span>
+    <h2><i class="fa fa-om"></i> Pooja Booking</h2>
+    <input type="text" id="pType" placeholder="Pooja Type" required>
+    <input type="date" id="pDate" required>
+    <input type="tel" id="pMobile" placeholder="Mobile" required>
+    <button class="btn-submit" onclick="alert('Hum aapse jald contact karenge')">Book Pooja Now</button>
+  </div>
+</div>
+
+<!-- 7. COUNSELLOR -->
+<div class="popup" id="counsellor">
+  <div class="popup-content">
+    <span class="close-btn" onclick="closePopup('counsellor')">&times;</span>
+    <h2><i class="fa fa-comments"></i> Counsellor Session</h2>
+    <input type="text" id="cName" placeholder="Name" required>
+    <textarea id="cIssue" placeholder="Issue" rows="3" required></textarea>
+    <input type="tel" id="cMobile" placeholder="Mobile" required>
+    <button class="btn-submit" onclick="alert('Session Booked!')">Book Session</button>
+  </div>
+</div>
+
+<!-- 8. SPEAKER -->
+<div class="popup" id="speaker">
+  <div class="popup-content">
+    <span class="close-btn" onclick="closePopup('speaker')">&times;</span>
+    <h2><i class="fa fa-sun"></i> Speaker Booking</h2>
+    <input type="text" id="sEvent" placeholder="Event Type" required>
+    <input type="text" id="sVenue" placeholder="Venue" required>
+    <input type="date" id="sDate" required>
+    <input type="tel" id="sMobile" placeholder="Mobile" required>
+    <button class="btn-submit" onclick="alert('Booking Request Sent!')">Book Speaker</button>
+  </div>
+</div>
+
+<script>
+function openPopup(id){ document.getElementById(id).classList.add('active'); }
+function closePopup(id){ document.getElementById(id).classList.remove('active'); }
+
+// COMMON PAYMENT FUNCTION
+function payNow(service, amount){
+  var options = {
+      "key": "rzp_test_YourKeyHere", // APNI RAZORPAY KEY DAALO
+      "amount": amount * 100,
+      "currency": "INR", "name": "Astro P.D Sharma",
+      "description": service, "theme": {"color": "#FFD700"},
+      "handler": function (response){
+          alert(`✅ Payment Successful!\n${service}\nPayment ID: ${response.razorpay_payment_id}`);
+          closePopup(service.toLowerCase().replace(' ', ''));
+      }
+  };
+  var rzp = new Razorpay(options); rzp.open();
+}
+
+// VASTU SPECIAL - COD + ONLINE
+function payVastu(){
+  let payMethod = document.querySelector('input[name="vpay"]:checked').value;
+  if(payMethod == 'cod'){
+    alert('Booking Confirm! ₹2100 Cash on Visit. Hum contact karenge.');
+    closePopup('vastu');
+  } else {
+    payNow('Vastu Consultation', 2100);
+  }
+}
+</script>
+
+</body>
+</html>
