@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>Astrology - Pandit Priyadarshi Sharma | RELIGIOUS ADVISOR & ASTROLOGER GOVT. OF INDIA in Gwalior, Madhya Pradesh |</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif; scroll-behavior: smooth; }
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&family=Playfair+Display:wght@700;900&display=swap');
+
+    /* FIX 1: html aur body dono me background + overflow hide */
+    html, body {
+      width: 100%;
+      max-width: 100%;
+      overflow-x: hidden;
+      background: #fffdf8;
+      color: #333;
+    }
+
+    /* MARQUEE - SCROLLING TEXT */
+  .marquee {
+      background: #8b0000;
+      color: white;
+      padding: 12px 0;
+      font-weight: 700;
+      font-size: 16px;
+      overflow: hidden;
+      white-space: nowrap;
+    }
+  .marquee-content {
+      display: inline-block;
+      padding-left: 100%;
+      animation: scroll-left 25s linear infinite;
+    }
+    @keyframes scroll-left {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-100%); }
+    }
+  .marquee:hover.marquee-content { animation-play-state: paused; } /* FIX 2: beech me space laga diya */
+
+    /* TOP BAR */
+  .top-bar { background: #ff6f00; color: white; padding: 10px 15px; font-size: 14px; text-align: center; font-weight: 600; display: flex; align-items: center; justify-content: center; gap: 10px; flex-wrap: wrap;} /* FIX 3: 2sra div hata diya + flex kiya */
+.premium-btn {
+  background: linear-gradient(45deg, #25D366, #128C7E);
+  color: #ffffff;
+  padding: 7px 18px;
+  border-radius: 25px;
+  text-decoration: none;
+  font-weight: 800;
+  border: 2px solid #25D366;
+  transition: 0.3s;
+  white-space: nowrap;
+  flex-shrink: 0;
+  box-shadow: 0 4px 10px rgba(37,211,102,0.3);
+}
+.premium-btn:hover {
+  background: linear-gradient(45deg, #128C7E, #25D366);
+  color: white;
+  border: 2px solid #128C7E;
+  transform: scale(1.05);
+}
+    /* ===== US WEBSITE JAISA MENU BAR ===== */
+    header {
+      background: #f5e9dd;
+      padding: 18px 0;
+      position: sticky;
+      top: 0;
+      z-index: 999;
+      border-bottom: 2px solid #d4a373;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    }
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 90%;
+      max-width: 1350px;
+      margin: auto;
+    }
+  .logo {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      color: #8b0000;
+      font-size: 26px;
+      font-weight: 900;
+      text-decoration: none;
+      font-family: 'Playfair Display', serif;
+      letter-spacing: 1px;
+      flex-shrink: 0;
+    }
+  .logo img {
+      width: 70px;
+      height: 70px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 3px solid #ffab00;
+    }
+  .links {
+      display: flex;
+      align-items: center;
+      gap: 15px; /* 25px se 15px kar diya */
+      flex-wrap: wrap; /* FIX: nowrap hata ke wrap kar diya */
+      justify-content: center;
+    }
+  .links a {
+      color: #0000EE!important;
+      text-decoration: underline!important;
+      font-weight: 600;
+      font-size: 15px;
+      transition: all 0.3s ease;
+      white-space: nowrap;
+    }
+  .links a:hover {
+      color: #8b0000!important;
+      text-decoration: underline!important;
+    }
+  .links a.btn-nav,
+  .links a.btn-nav:visited {
+      background: linear-gradient(45deg, #8b0000, #b22222)!important;
+      padding: 12px 28px!important;
+      border-radius: 50px!important;
+      color: #ffffff!important;
+      text-decoration: none!important;
+      font-weight: 900!important;
+      font-size: 15px;
+      box-shadow: 0 4px 12px rgba(139,0,0,0.3);
+      border: none!important;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+  .links a.btn-nav:hover {
+      background: linear-gradient(45deg, #b22222, #8b0000)!important;
+      transform: translateY(-2px);
+      color: #ffffff!important;
+      text-decoration: none!important;
+    }
+
+    /* FIX 4: MOBILE ME SECTION FULL WIDTH */
+    /* HERO SLIDER */
+  .hero { position: relative; text-align: center; padding: 180px 20px; color: white; max-width: 1400px; margin: 20px auto; border-radius: 25px; overflow: hidden; min-height: 650px; display: flex; align-items: center; justify-content: center; }
+  .slider { position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 1; }
+  .slide { position: absolute; width: 100%; height: 100%; background-size: cover; background-position: center; opacity: 0; transition: opacity 1.5s ease-in-out; }
+  .slide::after { content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(rgba(139,0,0,0.1), rgba(0,0,0,0.1)); }
+  .slide.active { opacity: 1; }
+  .hero-content { position: relative; z-index: 2; }
+  .hero h2 { font-size: 35px; margin-bottom: 20px; font-family: 'Playfair Display', serif; text-shadow: 3px 3px 15px #FFD700; animation: fadeInUp 1s; }
+  .hero p { font-size: 25px; margin-bottom: 40px; animation: fadeInUp 1.2s; }
+  .btn { background: linear-gradient(45deg, #ff6f00, #ffab00); color: white; padding: 18px 45px; border-radius: 50px; text-decoration: none; font-weight: bold; font-size: 18px; transition: 0.3s; display: inline-block; margin: 10px; border: none; cursor: pointer; box-shadow: 0 8px 20px rgba(255,111,0,0.4); }
+  .btn:hover { transform: translateY(-5px); box-shadow: 0 10px 25px rgba(0,0,0,0.4); }
+  .btn-whatsapp { background: linear-gradient(45deg, #25D366, #128C7E); color: #fff; font-weight: 700; }
+  .btn-whatsapp:hover { background: linear-gradient(45deg, #128C7E, #25D366); transform: translateY(-5px); }
+
+    @keyframes fadeInUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
+
+    /* SECTIONS - Card Style */
+    section {
+      padding: 100px 40px;
+      max-width: 1400px;
+      margin: 30px auto;
+      background: white;
+      border-radius: 25px;
+      box-shadow: 0 20px 50px rgba(0,0,0,0.08);
+      animation: fadeInUp 0.8s ease;
+    }
+    h2 { text-align: center; margin-bottom: 60px; color: #8b0000; font-size: 45px; font-weight: 900; font-family: 'Playfair Display', serif; text-shadow: 2px 2px 4px rgba(0,0,0,0.1); }
+  .services { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 35px; }
+  .card { background: linear-gradient(135deg, #fff8f0, #fff); padding: 40px; border-radius: 20px; text-align: center; transition: 0.4s; border: 2px solid #ffdd00; text-decoration: none; color: #333; display: block; }
+  .card:hover { transform: translateY(-15px); box-shadow: 0 20px 40px rgba(255,111,0,0.2); }
+  .card i { font-size: 55px; color: #ff6f00; background: #fff8f0; padding: 25px; border-radius: 50%; margin-bottom: 20px; }
+  .card h3 { font-size: 24px; color: #8b0000; margin-bottom: 15px; }
+  .card p { color: #666; font-size: 16px; }
+  .about-box { display: flex; gap: 50px; align-items: center; flex-wrap: wrap; }
+  .about-img { flex: 0 0 400px; text-align: center; }
+  .about-img img { width: 100%; border-radius: 20px; border: 8px solid #ffab00; box-shadow: 0 20px 40px rgba(0,0,0,0.2); }
+  .about-text { flex: 1; min-width: 300px; } /* FIX 5: 400px se 300px kiya */
+  .about-text h3 { font-size: 35px; color: #8b0000; margin-bottom: 20px; font-family: 'Playfair Display', serif; }
+  .about-text p { font-size: 18px; line-height: 1.9; color: #555; margin-bottom: 15px; }
+  .kundali-form { max-width: 800px; margin: auto; background: linear-gradient(135deg, #fff8f0, #fff); padding: 50px; border-radius: 25px; border: 3px solid #ffab00; }
+  .form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+  .kundali-form label { font-weight: 700; color: #8b0000; display: block; margin-bottom: 5px; }
+  .kundali-form input,.kundali-form select { width: 100%; padding: 16px; margin: 10px 0 20px 0; border: 2px solid #ffdd00; border-radius: 12px; font-size: 16px; font-family: 'Poppins', sans-serif; }
+.testimonial {
+  background: linear-gradient(135deg, #8b0000, #ff6f00);
+  color: white;
+  padding: 70px 100px;
+  border-radius: 25px;
+  text-align: justify;
+  max-width: 95%!important;
+  margin: 40px auto;
+  box-sizing: border-box;
+}
+.testimonial h2 { color: white; text-align: center; margin-bottom: 30px; font-size: 42px; font-family: 'Playfair Display', serif;}
+.testimonial p { font-size: 19px; line-height: 1.9; color: white; margin: 0 0 15px 0; padding: 0; max-width: 100%!important; word-spacing: 1px;}
+    footer { background: #1a0000; color: white; text-align: center; padding: 40px; }
+  .whatsapp { position:fixed; bottom:25px; right:25px; background:#25D366; color:white; padding:20px; border-radius:50%; font-size:30px; z-index: 999; animation: pulse 2s infinite; }
+    @keyframes pulse{0%{box-shadow:0 0 0 0 rgba(37,211,102,0.7)} 70%{box-shadow:0 0 0 20px rgba(37,211,102,0)} 100%{box-shadow:0 0 0 0 rgba(37,211,102,0)}}
+
+    /* FIX 6: MOBILE RESPONSIVE FINAL */
+   @media(max-width:1100px){
+  nav {
+    overflow-x: auto; /* Side scroll on */
+    scrollbar-width: none; /* Scroll bar chupao */
+  }
+  nav::-webkit-scrollbar { display: none; }
+  
+  .links {
+    flex-wrap: nowrap; /* Ek hi line me rahe */
+    gap: 20px;
+    padding-bottom: 5px;
+  }
+}
+    @media(max-width:768px){
+    .hero h2{font-size:28px;} /* 35 se 28 kiya */
+    .hero p{font-size:18px;} /* 25 se 18 kiya */
+    .hero{padding: 100px 15px; margin: 10px; border-radius: 20px;} /* FIX: margin kam */
+    .form-grid{grid-template-columns:1fr;}
+    .about-img{flex:0 0 100%;}
+     section { padding: 50px 20px; margin: 15px 10px; border-radius: 20px;} /* FIX: side se 10px */
+    .testimonial { padding: 40px 20px; max-width: 100%; text-align: left; border-radius: 20px; margin: 20px 10px; }
+    .testimonial h2 { font-size: 32px; }
+    .testimonial p { font-size: 17px; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="top-bar"> <!-- FIX: extra div hata diya -->
+    <span>यह वेबसाइट ⭐ RR Smart Solution ⭐ (राजेंद्र कंडारी), काशीपुर, उत्तराखंड द्वारा बनाई गई है | उनका संपर्क नंबर 📞 9411597480 है | यदि आप RR Smart Solution की वेबसाइट पर जाना चाहते हैं, तो कृपया इस लिंक पर क्लिक करें -</span>
+    <a href="https://kandari992.github.io/RR-Smart-Solution/" target="_blank" class="premium-btn">⭐ RR Smart Solution ⭐</a>
+</div>
+
+  <div class="marquee">
+    <div class="marquee-content">
+      🔮 Free Kundali Banayein | 🌌 Vastu Consultation | 💑 Love Problem Solution | 💯 1st Consultation Free | 📞 Call: +91 9584498448 (पंडित प्रियदर्शी शर्मा, आचार्य) | 🎯 Free Kundali Banayein | 💎 Vastu Consultation | ❤️ Love Problem Solution | 💬 1st Consultation Free | 📞 Call: +91 9584498448 (पंडित प्रियदर्शी शर्मा, आचार्य) 🔮
+    </div>
+  </div>
+
+  <header>
+    <nav>
+      <a href="index.html" class="logo">
+        <img src="PD_Sharma.png" alt="PRIYADARSHI SHARMA, ASTROLOGY SOLUTION">
+        PRIYADARSHI (प्रियदर्शी)
+      </a>
+      <div class="links">
+        <a href="#home">🏠Home</a>
+        <a href="#services">💯Services</a>
+        <a href="#about">📲Pandit Ji</a>
+        <a href="#kundali">⚡Free Kundali</a>
+        <a href="#contact">📲Contact</a>
+        <a href="Marriage-Compatibility-Report.html" class="special-link">💌Marriage Report Kundli</a>
+        <a href="Kundali-Format.html"> 🎯Kundli</a>
+        <a href="Booking-UPI.html" class="btn-nav">📞Book Now</a>
+      </div>
+    </nav>
+  </header>
+
+  <!-- BAATKI PURI WEBSITE WAISI HI RAHEGI -->
+  <!-- HERO SE LEKAR SCRIPT TAK SAB SAME -->
+
+  <!-- HERO -->
+  <section class="hero" id="home">
+    <div class="slider">
+      <div class="slide active" style="background-image: url('https://images.pexels.com/photos/1172253/pexels-photo-1172253.jpeg?auto=compress&w=1920');"></div>
+      <div class="slide" style="background-image: url('https://images.pexels.com/photos/844297/pexels-photo-844297.jpeg?auto=compress&w=1920');"></div>
+      <div class="slide" style="background-image: url('https://upload.wikimedia.org/wikipedia/commons/5/5f/Lord_Ganesha_at_Khatu_Shyamji_Temple.jpg');"></div>
+      <div class="slide" style="background-image: url('https://images.pexels.com/photos/161901/buddha-buddha-statue-hinduism-buddha-161901.jpeg?auto=compress&w=1920');"></div>
+      <div class="slide" style="background-image: url('https://images.pexels.com/photos/1396122/pexels-photo-1396122.jpeg?auto=compress&w=1920');"></div>
+      <div class="slide" style="background-image: url('https://images.pexels.com/photos/1571460/pexels-photo-1571460.jpeg?auto=compress&w=1920');"></div>
+      <div class="slide" style="background-image: url('https://images.pexels.com/photos/259962/pexels-photo-259962.jpeg?auto=compress&w=1920');"></div>
+      <div class="slide" style="background-image: url('https://images.pexels.com/photos/1080696/pexels-photo-1080696.jpeg?auto=compress&w=1920');"></div>
+      <div class="slide" style="background-image: url('https://images.pexels.com/photos/323780/pexels-photo-323780.jpeg?auto=compress&w=1920');"></div>
+      <div class="slide" style="background-image: url('https://images.pexels.com/photos/1581220/pexels-photo-1581220.jpeg?auto=compress&w=1920');"></div>
+    </div>
+    <div class="hero-content">
+      <h2>✨ एक अच्छी सलाह आपका भविष्य बदल सकती है । अपना भविष्य उज्जवल बनायें ।✨</h2>
+      <p>🌌 वैदिक ज्योतिष, वास्तु, अंकज्योतिष और लाल किताब विशेषज्ञ पंडित प्रियदर्शी शर्मा (आचार्य) ⭐</p>
+      <a href="Books.html" class="btn"><i class="fa fa-book"></i> धार्मिक पुस्तक पढ़े</a>
+      <a href="#kundali" class="btn"><i class="fa fa-star"></i> मुफ़्त में कुंडली बनाएँ</a>
+      <a href="https://wa.me/919584498448" class="btn btn-whatsapp"><i class="fab fa-whatsapp"></i> पंडित जी से बातचीत</a>
+      <a href="gyan.html" class="btn"><i class="fa fa-book-open"></i> ज्ञान वाणी </a>
+    </div>
+  </section>
+
+  <!-- SERVICES -->
+  <section id="services">
+    <h2>✨ हमारी दिव्य सेवाएँ ✨</h2>
+    <div class="services">
+      <a href="kundali.html" class="card"><i class="fas fa-scroll"></i><h3>जन्मपत्री/ कुंडली</h3><p>विस्तृत कुंडली रिपोर्ट और उपाय Fee: ₹501</p></a>
+      <a href="kundali-milan.html" class="card"><i class="fa fa-heart"></i><h3>कुंडली मिलान </h3><p>शादी के लिए 36 गुण मिलान + दोष निवारण. Fee: ₹251</p></a>
+      <a href="vastu.html" class="card"><i class="fa fa-home"></i><h3>वास्तु परामर्श</h3><p>घर और ऑफिस और अन्य स्थान के लिए वास्तु परामर्श. Visit: ₹2100</p></a>
+      <a href="numerology.html" class="card"><i class="fa fa-calculator"></i><h3>Numerology (अंक ज्योतिष)</h3><p>नाम और जन्म तिथि से करियर व बिज़नेस सलाह. Fee: ₹501</p></a>
+      <a href="lal-kitab.html" class="card"><i class="fa fa-book"></i><h3>लाल किताब उपाय</h3><p>महंगे रत्नों की जरूरत नहीं! घर में ही किए जाने वाले आसान उपायों से पाएं ग्रह दोष से मुक्ति. Fee: ₹351</p></a>
+      <a href="pooja-anushthan.html" class="card"><i class="fa fa-om"></i><h3>पूजा और अनुष्ठान</h3><p>नवग्रह शांति, मंगल दोष और कालसर्प पूजा बुकिंग</p></a>
+      <a href="counselling.html" class="card"><i class="fa fa-comments"></i><h3>परामर्शदाता</h3><p>नवग्रह शांति, मंगल दोष निवारण एवं कालसर्प पूजा बुकिंग कर अपनी समस्या का समाधान पाएं हमारे एक्सपर्ट परामर्शदाता से </p></a>
+      <a href="katha-vachak.html" class="card"><i class="fa fa-sun"></i><h3>आध्यात्मिक वक्ता एवं कथा वाचक</h3><p>हजारों लोगों को ज्ञान और भक्ति के मार्ग पर ले जाने वाले हमारे पूज्य गुरु जी</p></a>
+    </div>
+  </section>
+
+  <!-- ABOUT PANDIT JI -->
+  <section id="about">
+    <h2>⭐ हमारे मार्गदर्शक ⭐</h2>
+    <div class="about-box">
+      <div class="about-img">
+        <img src="Priyadarshi_Sharma.png" alt="पंडित प्रियदर्शी शर्मा (आचार्य) ">
+      </div>
+      <div class="about-text">
+        <h3>पंडित प्रियदर्शी शर्मा जी (आचार्य) </h3>
+	<p><b>♈ ♉ ♊ ♋ ♌ ♍ ♎ ♏ ♐ ♑ ♒ ♓</b></p>
+        <p><b>🕉️ ॥मन्त्रे तीर्थे द्विजे देवे दैवज्ञे भेषजे गुरौ। यादृशी भावना यस्य सिद्धिर्भवति तादृशी॥ 🕉️</b></p>
+        <p><b>💎 अर्थ: किसी मंत्र में, किसी पवित्र जगह में, किसी ब्राह्मण में, किसी देवता में, किसी ज्योतिषी में, किसी डॉक्टर में, किसी गुरु में। जैसी भावना होती है, वैसी ही पूर्णता होती है। 💎</b></p>
+        <p>✨ ज्योतिष शास्त्र में स्नातकोत्तर (आचार्य) और 20 साल का अनुभव | वैदिक ज्योतिष में स्वर्ण पदक विजेता ।</p>
+        <p>✨ पंडित प्रियदर्शिनी शर्मा जी (आचार्य) वैदिक ज्योतिष, वास्तु शास्त्र और लाल किताब के मान्यता प्राप्त विशेषज्ञ हैं। अब तक 10,000 से अधिक लोगों की समस्या का समाधान कर चुके हैं ।</p>
+        <p><i class="fa fa-check" style="color:#25D366"></i> प्यार और रिश्ते से जुड़ी समस्याएं ।</p>
+        <p><i class="fa fa-check" style="color:#25D366"></i> बच्चों से सम्बंधित समस्याएँ ।</p>
+        <p><i class="fa fa-check" style="color:#25D366"></i> करियर और बिज़नेस में तरक्की ।</p>
+        <p><i class="fa fa-check" style="color:#25D366"></i> शादी में देरी और दोष निवारण ।</p>
+        <p><i class="fa fa-check" style="color:#25D366"></i> वास्तु सम्बन्धित परामर्श और निवारण ।</p>
+        <p><i class="fa fa-check" style="color:#25D366"></i> प्रेरणा और परामर्श ।</p>
+        <a href="https://wa.me/919411597480" class="btn" style="margin-top:20px;"><i class="fab fa-whatsapp"></i> Appointment Book Karein</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FREE KUNDALI -->
+  <section id="kundali">
+    <h2>ॐ मुफ़्त में ऑनलाइन कुंडली बनाएँ ॐ</h2>
+    <form class="kundali-form" action="https://formsubmit.co/info@rrsmartsolution.com" method="POST">
+      <input type="hidden" name="_subject" value="New Kundali Request - Astrology">
+      <input type="hidden" name="_captcha" value="false">
+      <div class="form-grid">
+        <div><label>Pura Naam *</label><input type="text" name="name" required></div>
+        <div><label>Ling *</label>
+          <select name="gender" required><option value="">Select</option><option>Purush</option><option>Mahila</option></select>
+        </div>
+        <div><label>Janam Tithi *</label><input type="date" name="dob" required></div>
+        <div><label>Janam Samay *</label><input type="time" name="tob" required></div>
+        <div><label>Janam Sthan *</label><input type="text" name="place" placeholder="City, State" required></div>
+        <div><label>WhatsApp Number *</label><input type="tel" name="phone" required></div>
+      </div>
+      <button class="btn" type="submit" style="width:100%; margin-top:20px; font-size:20px;">📄 PDF Kundali Paayein</button>
+    </form>
+  </section>
+
+  <!-- TESTIMONIAL -->
+  <section class="testimonial">
+    <h2>🌟 हमारा उदेश्य 🌟</h2>
+    <p>"वैदिक ज्योतिष के पवित्र ज्ञान को जन-जन तक पहुंचाकर, प्रत्येक व्यक्ति के जीवन से अंधकार को दूर कर प्रकाश फैलाना ही हमारा परम उद्देश्य है।  
+पंडित प्रियदर्शी शर्मा जी का मानना है कि ग्रह बाधक नहीं, मार्गदर्शक होते हैं। हमारा संकल्प है कि हम ज्योतिष के माध्यम से आपकी 
+समस्याओं की जड़ तक जाएं और आपको सरल, सुलभ एवं प्रभावी उपाय प्रदान करें। ज्योतिष के दिव्य ज्ञान के माध्यम से हर व्यक्ति के जीवन में सुख, शांति और समृद्धि लाना ही हमारा परम उद्देश्य है। 
+पंडित प्रियदर्शी शर्मा जी पिछले 20 वर्षों से वैदिक ज्योतिष, वास्तु और लाल किताब के सटीक उपायों द्वारा 10,000 से अधिक लोगों की जीवन की समस्याओं का समाधान कर चुके हैं। हमारा लक्ष्य है । आपके ग्रह दोषों का निवारण करके, आपके भविष्य को उज्जवल बनाना 
+और आपको जीवन में सही मार्ग दिखाना। क्योंकि 'जैसी भावना वैसी सिद्धि' आपकी श्रद्धा ही आपकी सबसे बड़ी शक्ति है। "वैदिक ज्योतिष के पवित्र ज्ञान को जन-जन तक पहुंचाकर, प्रत्येक व्यक्ति के जीवन से अंधकार को दूर कर प्रकाश फैलाना ही हमारा परम उद्देश्य है।  
+पंडित प्रियदर्शी शर्मा जी का मानना है कि ग्रह बाधक नहीं, मार्गदर्शक होते हैं। हमारा संकल्प है कि हम ज्योतिष के माध्यम से आपकी 
+समस्याओं की जड़ तक जाएं और आपको सरल, सुलभ एवं प्रभावी उपाय प्रदान करें। जीवन की हर समस्या का समाधान ईश्वर ने पहले से ही लिख रखा है। बस उसे पढ़ने और समझने के लिए एक सच्चे मार्गदर्शक की आवश्यकता होती है।  
+हमारा उद्देश्य सिर्फ भविष्य बताना नहीं है, बल्कि आपके भविष्य को बेहतर बनाना है।  
+वैदिक ज्योतिष, वास्तु और लाल किताब के द्वारा हम आपके जीवन में आने वाली बाधाओं को दूर कर, आपको सुख, शांति और समृद्धि के मार्ग पर ले जाना चाहते हैं।  आपकी श्रद्धा + हमारा ज्ञान = आपके जीवन की सफलता । आइए, अपने भाग्य का साथ अपने कर्म से बनाएं।"</p>
+    <p style="margin-top:25px; font-weight:700;"> ✨ पंडित प्रियदर्शी शर्मा जी (आचार्य), ग्वालियर (मध्य प्रदेश) ✨</p> </p> ♈ ♉ ♊ ♋ ♌ ♍ ♎ ♏ ♐ ♑ ♒ ♓
+  </section>
+
+  <footer id="contact">
+    <p>© 2026 Astrology website created by RR Smart Solution (Rajendra Singh Kandari) | Contact: +91 9411597480</p>
+    <p style="margin-top:10px; color:#ffab00;">Email: info@rrsmartsolution.com and kandari992@gmail.com| Address: Kashipur, Uttrakhand, India</p>
+  </footer>
+
+  <a href="https://wa.me/919584498448" class="whatsapp"><i class="fab fa-whatsapp"></i></a>
+
+  <script>
+    let slides = document.querySelectorAll('.slide');
+    let currentSlide = 0;
+    function showSlide() {
+      slides.forEach(slide => slide.classList.remove('active'));
+      slides[currentSlide].classList.add('active');
+      currentSlide = (currentSlide + 1) % slides.length;
+    }
+    setInterval(showSlide, 3500);
+  </script>
+
+</body>
+</html>
