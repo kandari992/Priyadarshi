@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>विवाह गुण मिलान प्रतिवेदन - A4 Premium</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Devanagari:wght@400;600;700;800&display=swap" rel="stylesheet">
+<style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    /* A4 PRINT SETTING */
+    @page {
+        size: A4;
+        margin: 0;
+    }
+
+    body {
+        /* MAST PREMIUM BACKGROUND - PANEL KE BAHAR */
+        background: radial-gradient(circle at top, #2a1200 0%, #0a0500 70%);
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        padding: 0;
+        font-family: 'Noto Sans Devanagari', serif;
+        min-height: 100vh;
+    }
+
+    .report {
+        width: 210mm; /* EXACT A4 WIDTH */
+        height: 297mm; /* EXACT A4 HEIGHT */
+        background: linear-gradient(180deg, #1a0f00 0%, #0a0500 100%); /* PANEL BG */
+        border: 4px solid #d4af37;
+        padding: 12mm;
+        color: #f5e6c4;
+        background-image: 
+            radial-gradient(#d4af37 1px, transparent 1px),
+            linear-gradient(45deg, rgba(212,175,55,0.05) 25%, transparent 25%);
+        background-size: 40px 40px, 20px 20px;
+        box-shadow: 0 0 30px rgba(212,175,55,0.3);
+        overflow: hidden;
+    }
+
+    .header-top {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 8px;
+    }
+    .logo {
+        width: 85px;
+        height: 85px;
+        border-radius: 50%;
+        border: 2px solid #d4af37;
+        object-fit: cover;
+    }
+    .header-center { text-align: center; flex: 1; }
+    .header-center h1 { 
+        font-size: 30px; 
+        font-weight: 800; 
+        color: #ffd700; 
+        text-shadow: 0 0 8px #d4af37;
+    }
+    .header-center h2 { 
+        font-size: 13px; 
+        color: #f5e6c4; 
+        margin: 2px 0;
+    }
+
+    .main-title {
+        text-align: center;
+        font-size: 26px;
+        font-weight: 800;
+        color: #ffd700;
+        margin: 8px 0;
+        text-shadow: 1px 1px 3px #000;
+    }
+
+    .editable {
+        border: none;
+        border-bottom: 1.5px dotted #d4af37;
+        background: transparent;
+        font-size: 13px;
+        font-family: 'Noto Sans Devanagari', serif;
+        text-align: center;
+        color: #ffd700;
+        font-weight: 600;
+        outline: none;
+    }
+    .editable.name { width: 150px; }
+    .editable.date { width: 95px; }
+    .editable.dosh { width: 190px; text-align: left; color: #f5e6c4; }
+    .date-line { text-align: center; margin: 8px 0; font-size: 14px; }
+
+    .paksha-container {
+        display: flex;
+        gap: 12px;
+        margin: 12px 0;
+    }
+    .paksha-box {
+        flex: 1;
+        background: rgba(139, 0, 0, 0.35);
+        border: 1px solid #d4af37;
+        border-radius: 10px;
+        padding: 10px;
+    }
+    .paksha-title {
+        background: linear-gradient(90deg, #d4af37, #ffd700);
+        color: #1a0f00;
+        text-align: center;
+        padding: 6px;
+        border-radius: 8px;
+        font-weight: 800;
+        font-size: 15px;
+        margin-bottom: 8px;
+    }
+    .detail-row {
+        display: flex;
+        align-items: center;
+        margin: 6px 0;
+        font-size: 13px;
+    }
+    .detail-row .label { width: 85px; font-weight: 600; }
+
+    .table-title {
+        text-align: center;
+        font-size: 15px;
+        font-weight: 700;
+        margin: 12px 0 6px;
+        color: #ffd700;
+    }
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        border: 1px solid #d4af37;
+        border-radius: 8px;
+        overflow: hidden;
+    }
+    th {
+        background: linear-gradient(90deg, #d4af37, #ffd700);
+        color: #1a0f00;
+        padding: 6px;
+        font-size: 13px;
+        font-weight: 800;
+    }
+    td {
+        padding: 5px;
+        text-align: center;
+        border: 1px solid #d4af37;
+        background: rgba(0,0,0,0.25);
+        font-size: 12px;
+    }
+    .editable.td { width: 45px; color: #ffd700; }
+    .editable.td.prapt { color: #00ff88; font-weight: 700; }
+
+    .total {
+        text-align: center;
+        background: linear-gradient(90deg, #d4af37, #ffd700);
+        color: #000;
+        padding: 8px;
+        font-size: 17px;
+        font-weight: 800;
+        border-radius: 8px;
+        margin: 10px 0;
+    }
+    .total span {
+        color: #000;
+        font-size: 17px;
+        font-weight: 800;
+    }
+
+    .bottom-container {
+        display: flex;
+        gap: 12px;
+        margin: 12px 0;
+    }
+    .bottom-box {
+        flex: 1;
+        background: rgba(139, 0, 0, 0.35);
+        border: 1px solid #d4af37;
+        border-radius: 10px;
+        padding: 10px;
+    }
+    .bottom-title {
+        background: linear-gradient(90deg, #d4af37, #ffd700);
+        color: #1a0f00;
+        text-align: center;
+        padding: 6px;
+        border-radius: 8px;
+        font-weight: 800;
+        font-size: 15px;
+        margin-bottom: 8px;
+    }
+    .checkbox { margin: 5px 0; font-size: 12px; display: flex; align-items: center; gap: 5px; }
+    .result { text-align: center; font-size: 15px; font-weight: 700; }
+    .result .shubh { color: #00e5ff; }
+    .result .ashubh { color: #ff3b3b; }
+
+    .footer { text-align: center; margin-top: 10px; }
+    .footer h3 { font-size: 15px; color: #f5e6c4; }
+    .footer h1 { 
+        font-size: 26px; 
+        color: #ffd700; 
+        font-weight: 800; 
+        text-shadow: 0 0 5px #d4af37;
+        margin: 2px 0;
+    }
+    .footer p { font-size: 12px; color: #00e5ff; }
+    .phone {
+        font-size: 18px;
+        color: white;
+        font-weight: 800;
+        margin-top: 6px;
+    }
+
+    .print-btn {
+        position: fixed;
+        top: 10px;
+        right: 10px;
+        background: #d4af37;
+        color: #1a0f00;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 6px;
+        font-size: 14px;
+        cursor: pointer;
+        font-weight: 800;
+        z-index: 999;
+    }
+    
+    @media print {
+        .print-btn { display: none; }
+        body { 
+            background: radial-gradient(circle at top, #2a1200 0%, #0a0500 70%); /* PRINT MEIN BHI BG */
+            padding: 0; 
+        }
+        .report { 
+            width: 210mm; 
+            height: 297mm;
+            border: 3px solid #d4af37; 
+            box-shadow: none;
+            padding: 10mm;
+        }
+    }
+</style>
+</head>
+<body>
+
+<button class="print-btn" onclick="window.print()">🖨️ Print / PDF Save</button>
+
+<div class="report">
+  
+  <div class="header-top">
+    <img src="PD_Sharma2.png" class="logo" alt="Priyadarshi Logo">
+    <div class="header-center">
+      <h1>ASTRO P.D SHARMA</h1>
+      <h2>एक सही सलाह आपका जीवन बदल सकती है</h2>
+    </div>
+    <img src="PD_Sharma.png" class="logo" alt="Priyadarshi Logo">
+  </div>
+
+  <h1 class="main-title">विवाह गुण मिलान प्रतिवेदन</h1>
+
+  <p style="text-align: center; font-size: 14px;">
+    श्री <input type="text" class="editable name" placeholder="वर का नाम"> श्री एवं सुश्री 
+    <input type="text" class="editable name" placeholder="वधु का नाम"> का विवाह कुंडली मिलान
+  </p>
+
+  <p class="date-line">दिनांक : <input type="text" class="editable date" value="21/07/2025"></p>
+
+  <div class="paksha-container">
+    <div class="paksha-box">
+      <div class="paksha-title">वर पक्ष</div>
+      <div class="detail-row"><span class="label">राशि :</span> <input type="text" class="editable" placeholder="सिंह"></div>
+      <div class="detail-row"><span class="label">जन्म तिथि :</span> <input type="text" class="editable" placeholder="24/11/1986"></div>
+      <div class="detail-row"><span class="label">जन्म समय :</span> <input type="text" class="editable" placeholder="10:15 रात्रि"></div>
+      <div class="detail-row"><span class="label">जन्म स्थान :</span> <input type="text" class="editable" placeholder="चण्डीगढ़"></div>
+    </div>
+
+    <div class="paksha-box">
+      <div class="paksha-title">वधू पक्ष</div>
+      <div class="detail-row"><span class="label">राशि :</span> <input type="text" class="editable" placeholder="वृश्चिक"></div>
+      <div class="detail-row"><span class="label">जन्म तिथि :</span> <input type="text" class="editable" placeholder="23/10/1990"></div>
+      <div class="detail-row"><span class="label">जन्म समय :</span> <input type="text" class="editable" placeholder="03:00 अपराहन"></div>
+      <div class="detail-row"><span class="label">जन्म स्थान :</span> <input type="text" class="editable" placeholder="प्रयागराज"></div>
+    </div>
+  </div>
+
+  <h2 class="table-title">वर-वधू गुण मिलान का विस्तृत परिणाम</h2>
+  <table id="gunTable">
+    <tr>
+      <th>गुण</th>
+      <th>अधिकतम अंक</th>
+      <th>प्राप्त अंक</th>
+    </tr>
+    <tr>
+      <td>🏠 वर्ण</td>
+      <td><input type="number" class="editable td" value="1"></td>
+      <td><input type="number" class="editable td prapt" value="0" oninput="calculateTotal()"></td>
+    </tr>
+    <tr>
+      <td>✋ वश्य</td>
+      <td><input type="number" class="editable td" value="2"></td>
+      <td><input type="number" class="editable td prapt" value="0" oninput="calculateTotal()"></td>
+    </tr>
+    <tr>
+      <td>⭐ तारा</td>
+      <td><input type="number" class="editable td" value="3"></td>
+      <td><input type="number" class="editable td prapt" value="3" oninput="calculateTotal()"></td>
+    </tr>
+    <tr>
+      <td>🐄 योनि</td>
+      <td><input type="number" class="editable td" value="4"></td>
+      <td><input type="number" class="editable td prapt" value="2" oninput="calculateTotal()"></td>
+    </tr>
+    <tr>
+      <td>🤝 ग्रह मैत्री</td>
+      <td><input type="number" class="editable td" value="5"></td>
+      <td><input type="number" class="editable td prapt" value="5" oninput="calculateTotal()"></td>
+    </tr>
+    <tr>
+      <td>👥 गण</td>
+      <td><input type="number" class="editable td" value="6"></td>
+      <td><input type="number" class="editable td prapt" value="6" oninput="calculateTotal()"></td>
+    </tr>
+    <tr>
+      <td>∞ भकूट</td>
+      <td><input type="number" class="editable td" value="7"></td>
+      <td><input type="number" class="editable td prapt" value="7" oninput="calculateTotal()"></td>
+    </tr>
+    <tr>
+      <td>💓 नाड़ी</td>
+      <td><input type="number" class="editable td" value="8"></td>
+      <td><input type="number" class="editable td prapt" value="8" oninput="calculateTotal()"></td>
+    </tr>
+  </table>
+
+  <div class="total">कुल प्राप्त अंक = <span id="totalMarks">31</span> / 36</div>
+
+  <div class="bottom-container">
+    <div class="bottom-box">
+      <div class="bottom-title">विवाह दोष</div>
+      <div class="checkbox"><input type="checkbox"> नाड़ी दोष</div>
+      <div class="checkbox"><input type="checkbox"> गण दोष</div>
+      <div class="checkbox"><input type="checkbox"> वर्ण दोष</div>
+      <div class="checkbox"><input type="checkbox"> वैर योनि दोष</div>
+      <div class="checkbox"><input type="checkbox"> षडाष्टक दोष</div>
+      <div class="checkbox"><input type="checkbox"> नवपंचम दोष</div>
+      <div class="checkbox"><input type="checkbox"> वर मंगल दोष</div>
+      <div class="checkbox"><input type="checkbox"> वधू मंगल दोष</div>
+      <div class="checkbox"><input type="checkbox"> <input type="text" class="editable dosh" placeholder="........................................"></div>
+      <div class="checkbox"><input type="checkbox"> <input type="text" class="editable dosh" placeholder="........................................"></div>	
+    </div>
+
+    <div class="bottom-box">
+      <div class="bottom-title">अंतिम परिणाम</div>
+      <div class="result">
+        <div class="checkbox" style="justify-content: center;"><input type="checkbox"> <span class="shubh">01 – शुभ</span></div>
+        <div class="checkbox" style="justify-content: center;"><input type="checkbox"> <span class="ashubh">02 – अशुभ</span></div>
+      </div>
+      <p style="margin-top: 8px;">उपाय :</p>
+      <input type="text" class="editable" style="width: 100%; margin-top: 3px;" placeholder="...........................">
+      <input type="text" class="editable" style="width: 100%; margin-top: 3px;" placeholder="...........................">
+      <input type="text" class="editable" style="width: 100%; margin-top: 3px;" placeholder="...........................">
+      <input type="text" class="editable" style="width: 100%; margin-top: 3px;" placeholder="...........................">
+      <input type="text" class="editable" style="width: 100%; margin-top: 3px;" placeholder="...........................">	
+      <input type="text" class="editable" style="width: 100%; margin-top: 3px;" placeholder="...........................">
+    </div>
+  </div>
+
+  <div class="footer">
+    <h3>अंतरराष्ट्रीय ज्योतिषाचार्य</h3>
+    <h1>पं. पी. डी. शर्मा</h1>
+    <p>(धार्मिक सलाहकार, भारत सरकार, 📞 9584498448)</p>
+    <div class="phone">📞 <input type="text" class="editable" style="color:white; width:120px;" value="9584498448"></div>
+  </div>
+
+</div>
+
+<script>
+// AUTO TOTAL CALCULATION
+function calculateTotal() {
+    let total = 0;
+    let praptInputs = document.querySelectorAll('.prapt');
+    praptInputs.forEach(input => {
+        total += parseInt(input.value) || 0;
+    });
+    document.getElementById('totalMarks').innerText = total;
+}
+window.onload = calculateTotal;
+</script>
+
+</body>
+</html>
