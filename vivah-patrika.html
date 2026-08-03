@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Vivah Muhurat Patrika - Mobile + A4</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Devanagari:wght@400;600;700;800&display=swap" rel="stylesheet">
+<style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    /* A4 PRINT SETTING */
+    @page {
+        size: A4;
+        margin: 0;
+    }
+
+    body {
+        background: radial-gradient(circle at top, #4a2c17 0%, #1f1208 80%);
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        padding: 10px;
+        font-family: 'Noto Sans Devanagari', serif;
+        min-height: 100vh;
+    }
+
+    .patrika {
+        width: 100%;
+        max-width: 210mm; /* DESKTOP ME A4 */
+        background: #fff8e7;
+        border: 8px solid #5a1a1a;
+        border-image: repeating-linear-gradient(45deg, #5a1a1a, #5a1a1a 8px, #d4af37 8px, #d4af37 16px) 8;
+        padding: 15px;
+        box-shadow: 0 0 30px rgba(0,0,0,0.4);
+        color: #3d1f0a;
+        overflow-x: hidden;
+    }
+    .inner-border {
+        border: 2px solid #d4af37;
+        padding: 15px;
+        background: rgba(255,248,231,0.85);
+    }
+
+    .header { text-align: center; margin-bottom: 10px; }
+    .header h3 { font-size: 16px; font-weight: 700; color: #5a1a1a; }
+    .header h1 { font-size: 24px; font-weight: 800; color: #5a1a1a; margin: 6px 0; }
+
+    .ganesh-img {
+        width: 90px; 
+        margin: 8px auto;
+        display: block;
+        filter: drop-shadow(0 5px 10px rgba(0,0,0,0.3));
+    }
+
+    .shlok {
+        text-align: center;
+        font-size: 13px;
+        margin: 12px 0;
+        padding: 8px;
+        border: 2px solid #d4af37;
+        border-radius: 10px;
+        background: rgba(212,175,55,0.1);
+        font-weight: 600;
+        line-height: 1.6;
+    }
+
+    .title {
+        text-align: center;
+        font-size: 26px;
+        font-weight: 800;
+        color: #5a1a1a;
+        margin: 12px 0;
+        text-shadow: 1px 1px 0 #d4af37;
+    }
+
+    .content { font-size: 14px; line-height: 1.7; text-align: center; margin-bottom: 12px; }
+    .content span.red { color: #b30000; font-weight: 700; }
+
+    .editable {
+        border: none;
+        border-bottom: 2px dotted #5a1a1a;
+        background: transparent;
+        font-size: 14px;
+        font-family: 'Noto Sans Devanagari', serif;
+        text-align: center;
+        width: 100px;
+        max-width: 100%;
+        outline: none;
+        color: #b30000;
+        font-weight: 700;
+    }
+    .editable.small { width: 60px; }
+    .editable.large { width: 150px; }
+
+    /* TABLE KO MOBILE ME SCROLL KARA */
+    .table-wrapper{overflow-x:auto;margin:15px 0;}
+    table {
+        width: 100%;
+        min-width: 500px; /* table chota na ho */
+        border-collapse: collapse;
+        text-align: center;
+    }
+    table, th, td {
+        border: 2px solid #d4af37;
+    }
+    th {
+        background: #5a1a1a;
+        color: #fff8e7;
+        padding: 8px 5px;
+        font-size: 12px;
+    }
+    td {
+        padding: 8px 5px;
+        background: rgba(255,248,231,0.7);
+    }
+
+    .footer { text-align: center; margin-top: 12px; }
+    .footer h2 { font-size: 18px; color: #5a1a1a; font-weight: 800; }
+    .phone {
+        display: inline-block;
+        background: #5a1a1a;
+        color: white;
+        padding: 6px 15px;
+        border-radius: 30px;
+        font-size: 16px;
+        margin-top: 8px;
+        font-weight: 700;
+    }
+
+    .print-btn {
+        position: fixed;
+        top: 10px;
+        right: 10px;
+        background: #b30000;
+        color: white;
+        padding: 10px 18px;
+        border: none;
+        border-radius: 8px;
+        font-size: 14px;
+        cursor: pointer;
+        font-weight: 700;
+        z-index: 999;
+    }
+
+    /* DESKTOP / PRINT KE LIYE A4 */
+    @media (min-width: 768px) {
+        .patrika { padding: 12mm; border-width: 12px; }
+        .inner-border { padding: 20px; }
+        .header h3 { font-size: 20px; }
+        .header h1 { font-size: 32px; }
+        .ganesh-img { width: 110px; }
+        .shlok { font-size: 15px; }
+        .title { font-size: 36px; }
+        .content { font-size: 15px; }
+        .editable { font-size: 15px; width: 110px; }
+        .editable.small { width: 70px; }
+        .editable.large { width: 180px; }
+        th { font-size: 14px; padding: 10px; }
+        td { padding: 10px; }
+        .footer h2 { font-size: 24px; }
+        .phone { font-size: 18px; }
+    }
+
+    @media print {
+        .print-btn { display: none; }
+        body { 
+            background: radial-gradient(circle at top, #4a2c17 0%, #1f1208 80%);
+            padding: 0; 
+        }
+        .patrika { 
+            width: 210mm;
+            min-height: 297mm;
+            box-shadow: none; 
+            border: 10px solid #5a1a1a; 
+            padding: 10mm;
+            max-width: 100%;
+        }
+    }
+</style>
+</head>
+<body>
+
+<button class="print-btn" onclick="window.print()">🖨️ Print / PDF Save</button>
+
+<div class="patrika">
+  <div class="inner-border">
+    
+    <div class="header">
+      <h3>॥ श्री सर्वोपरि ॥</h3>
+      <h3>॥ श्री गणेशाय नमः ॥</h3>
+    </div>
+
+    <img src="ganesh.png" alt="Shri Ganesh Ji" class="ganesh-img">
+
+    <div class="shlok">
+      जननी जन्मसौख्यानां, वर्धनी कुलसम्पदाम् ।<br>
+      पदवीं पूर्वपुण्यानां, लिख्यते विवाह-पत्रिका ॥
+    </div>
+
+    <h1 class="title">अथ विवाह मुहूर्त पत्रिका</h1>
+
+    <div class="content">
+      ॐ सिद्ध <span class="red">श्री सर्वोपरि</span> विराजमान सकल गुण निधान ।<br>
+      गंगाजल निर्मल, यमुना जल शीतल, पावन पवित्र, शुभ चरित्र, षट्कर्म सावधान ।<br>
+      श्री गणेश जी महाराज की कृपा से शुभ विवाह मुहूर्त का शोधन किया गया है<br>
+      सो इस प्रकार अंकित है
+    </div>
+
+    <div class="content" style="text-align: left;">
+      सम्वत् 20<input type="text" class="editable small" placeholder="25"> 
+      मासानां <span class="red">मासोत्तमे मासे</span> <input type="text" class="editable" placeholder="कार्तिक"> 
+      मासे शुभे <input type="text" class="editable" placeholder="शुक्ल"><br><br>
+      
+      पक्षे <input type="text" class="editable" placeholder="शुक्ल"> 
+      शुभ तिथि <input type="text" class="editable" placeholder="पंचमी"> 
+      वासरे <input type="text" class="editable" placeholder="रविवार"> 
+      तदनुसार दिनांक <input type="text" class="editable" placeholder="10/11/2026"><br><br>
+
+      माह <input type="text" class="editable" placeholder="नवम्बर"> 
+      सन् 20<input type="text" class="editable small" placeholder="26"> 
+      का विवाह श्रेष्ठ एवं शुभ बनता है । सो आप स्वीकार करें ।
+    </div>
+
+    <!-- TABLE KO WRAPPER ME DALA -->
+    <div class="table-wrapper">
+      <table>
+        <tr>
+          <th>वर नाम</th>
+          <th>तस्य राशि</th>
+          <th>सूर्यबल</th>
+          <th>चन्द्रबल</th>
+        </tr>
+        <tr>
+          <td><input type="text" class="editable large" placeholder="वर का नाम"></td>
+          <td><input type="text" class="editable" placeholder="मेष"></td>
+          <td><input type="text" class="editable" placeholder="8"></td>
+          <td><input type="text" class="editable" placeholder="10"></td>
+        </tr>
+        <tr>
+          <th>कन्या नाम</th>
+          <th>तस्य राशि</th>
+          <th>गुरुबल</th>
+          <th>चन्द्रबल</th>
+        </tr>
+        <tr>
+          <td><input type="text" class="editable large" placeholder="कन्या का नाम"></td>
+          <td><input type="text" class="editable" placeholder="वृष"></td>
+          <td><input type="text" class="editable" placeholder="7"></td>
+          <td><input type="text" class="editable" placeholder="9"></td>
+        </tr>
+      </table>
+    </div>
+
+    <div class="footer">
+      <p>( तत ) साहा शुद्धौ लतादि दशदोष रहितम् पाणिग्रहणम् शुभम् ।</p>
+      <h2>आचार्य पण्डित प्रियदर्शी शर्मा</h2>
+      <div class="phone">📞 <input type="text" class="editable" style="color:white; border-bottom: 1px dotted white; width:130px;" value="9584498448"></div>
+    </div>
+
+  </div>
+</div>
+
+</body>
+</html>
